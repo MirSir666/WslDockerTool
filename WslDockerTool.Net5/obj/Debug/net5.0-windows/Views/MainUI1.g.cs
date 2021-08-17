@@ -21,13 +21,6 @@ using HandyControl.Themes;
 using HandyControl.Tools;
 using HandyControl.Tools.Converter;
 using HandyControl.Tools.Extension;
-using Prism.DryIoc;
-using Prism.Interactivity;
-using Prism.Ioc;
-using Prism.Mvvm;
-using Prism.Regions;
-using Prism.Regions.Behaviors;
-using Prism.Services.Dialogs;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -51,7 +44,6 @@ using System.Windows.Shapes;
 using System.Windows.Shell;
 using WslDockerTool.Net5.Controls;
 using WslDockerTool.Net5.Views;
-using WslDockerTool.Net5.Views.Image;
 
 
 namespace WslDockerTool.Net5.Views {

@@ -8,7 +8,7 @@
 		<Setter Property="VerticalAlignment" Value="Center" />
 	</Style>
 
-	<Style BasedOn="{StaticResource BaseStyle}" TargetType="DataGrid" />
+	<!--<Style BasedOn="{StaticResource BaseStyle}" TargetType="DataGrid" />-->
 
 	<!--<Style BasedOn="{StaticResource TreeViewBaseStyle}" TargetType="TreeView">
 		<Style.Triggers>

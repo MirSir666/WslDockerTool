@@ -25,8 +25,7 @@
 			AutoGenerateColumns="False"
 			HeadersVisibility="All"
 			ItemsSource="{Binding Items}"
-			RowHeaderWidth="60"
-			Style="{StaticResource =BaseStyle}">
+			RowHeaderWidth="60">
 			<DataGrid.RowHeaderTemplate>
 				<DataTemplate>
 					<CheckBox IsChecked="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=DataGridRow}}" />
