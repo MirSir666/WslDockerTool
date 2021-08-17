@@ -1,0 +1,2 @@
+D:\project\Example\WslDockerTool\WslDockerTool.Net461\obj\Debug\WslDockerTool.Net461.exe.config
+D:\project\Example\WslDockerTool\WslDockerTool.Net461\obj\Debug\WslDockerTool.Net461.csproj.AssemblyReference.cache

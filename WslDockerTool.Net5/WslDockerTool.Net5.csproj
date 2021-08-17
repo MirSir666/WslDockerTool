@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Controls\Icon\iconfont.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HandyControl" Version="3.2.0" />
+    <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
+    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WslDockerTool.Shared\WslDockerTool.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Controls\Icon\iconfont.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
