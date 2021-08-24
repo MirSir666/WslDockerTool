@@ -18,7 +18,12 @@
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
 		<StackPanel>
-			<TextBlock>images</TextBlock>
+
+			<hc:ButtonGroup Width="200">
+				<Button Content="查询" Style="{DynamicResource ButtonDashedSuccess}" />
+				<Button Content="添加" Style="{DynamicResource ButtonDashedInfo}" />
+				<Button Content="移除" Style="{DynamicResource ButtonDashedInfo}" />
+			</hc:ButtonGroup>
 		</StackPanel>
 		<DataGrid
 			Grid.Row="1"
@@ -33,25 +38,24 @@
 			</DataGrid.RowHeaderTemplate>
 			<DataGrid.Columns>
 				<DataGridTextColumn
-					Width="80"
-					Binding="{Binding Index}"
+					Width="120"
+					Binding="{Binding ID}"
 					CanUserResize="False"
-					Header="名称1"
+					Header="id"
 					IsReadOnly="True" />
 
 				<DataGridTextColumn
-					Width="1"
+					Width="*"
 					Binding="{Binding Name}"
-					Header="名称1" />
-				<DataGridComboBoxColumn
-					Width="100"
-					CanUserResize="False"
-					Header="名称1"
-					SelectedValueBinding="{Binding Type}" />
+					Header="名称" />
 				<DataGridTextColumn
-					Width="1"
-					Binding="{Binding Remark}"
-					Header="名称1" />
+					Width="80"
+					Binding="{Binding Size, Converter={StaticResource bytesToStringConverter}}"
+					Header="大小" />
+				<DataGridTextColumn
+					Width="120"
+					Binding="{Binding Created, StringFormat={}{0:yyyy-MM-dd}}"
+					Header="创建时间" />
 			</DataGrid.Columns>
 		</DataGrid>
 	</Grid>

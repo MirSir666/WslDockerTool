@@ -8,6 +8,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using WslDockerTool.Net5.Core.Mapping;
 using WslDockerTool.Net5.Views;
 using WslDockerTool.Net5.Views.Container;
 using WslDockerTool.Net5.Views.Image;
@@ -33,8 +34,9 @@ namespace WslDockerTool.Net5
 		protected override IContainerExtension CreateContainerExtension()
 		{
 			var container = new Container(CreateContainerRules());
-			container.RegisterWslDockerToolShared();
 			container.RegisterDelegate<DockerConfig>(o => new DockerConfig() { BaseUri = new Uri("http://localhost:3000/") });
+			container.RegisterWslDockerToolShared();
+			container.RegisterAutoMapper();
 			return new DryIocContainerExtension(container);
 		}
 

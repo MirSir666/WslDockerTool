@@ -61,3 +61,4 @@ D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\Vie
 D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\Views\MainUI1.baml
 D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\Views\Home\Home.g.cs
 D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\Views\Home\Home.baml
+D:\project\Example\WslDockerTool\WslDockerTool.Net5\bin\Debug\net5.0-windows\AutoMapper.dll

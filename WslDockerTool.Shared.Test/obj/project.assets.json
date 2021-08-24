@@ -1646,7 +1646,7 @@
           "build/netcoreapp2.1/xunit.runner.visualstudio.props": {}
         }
       },
-      "WslDockerTool.Shared/1.0.0": {
+      "WslDockerTool.Shared/6.0.22-Release.7190187": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -5842,7 +5842,7 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "WslDockerTool.Shared/1.0.0": {
+    "WslDockerTool.Shared/6.0.22-Release.7190187": {
       "type": "project",
       "path": "../WslDockerTool.Shared/WslDockerTool.Shared.csproj",
       "msbuildProject": "../WslDockerTool.Shared/WslDockerTool.Shared.csproj"
@@ -5851,7 +5851,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.NET.Test.Sdk >= 16.9.4",
-      "WslDockerTool.Shared >= 1.0.0",
+      "WslDockerTool.Shared >= 6.0.22-Release.7190187",
       "coverlet.collector >= 3.0.2",
       "xunit >= 2.4.1",
       "xunit.runner.visualstudio >= 2.4.3"
@@ -5864,7 +5864,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "6.0.22-Release.7190187",
     "restore": {
       "projectUniqueName": "D:\\project\\Example\\WslDockerTool\\WslDockerTool.Shared.Test\\WslDockerTool.Shared.Test.csproj",
       "projectName": "WslDockerTool.Shared.Test",

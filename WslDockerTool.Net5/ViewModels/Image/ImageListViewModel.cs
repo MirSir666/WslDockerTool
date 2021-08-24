@@ -1,4 +1,5 @@
-﻿using Prism.Mvvm;
+﻿using AutoMapper;
+using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,14 +8,27 @@ using System.Threading.Tasks;
 using WslDockerTool.Net5.Core.Mvvm;
 using WslDockerTool.Net5.Manage;
 using WslDockerTool.Net5.Models.Image;
+using WslDockerTool.Shared;
 
 namespace WslDockerTool.Net5.ViewModels.Image
 {
 	public class ImageListViewModel : Collection<ImageListItemModel>
 	{
-		public ImageListViewModel()
+		private readonly IImageHandler imageHandler;
+		private readonly IMapper mapper;
+
+		public  ImageListViewModel(IImageHandler imageHandler, IMapper mapper)
 		{
-			this.Items.AddRange(new ImageListItemModel(), new ImageListItemModel());
+			this.imageHandler = imageHandler;
+			this.mapper = mapper;
+			Init();
+		}
+
+		public async void Init()
+		{
+			var ret = await imageHandler.ListImagesAsync(new Docker.DotNet.Models.ImagesListParameters());
+			var list = mapper.Map<List<ImageListItemModel>>(ret);
+			this.Items.AddRange(list);
 		}
 	}
 }
