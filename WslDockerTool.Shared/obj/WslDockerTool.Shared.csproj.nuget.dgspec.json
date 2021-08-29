@@ -5,7 +5,7 @@
   },
   "projects": {
     "D:\\project\\Example\\WslDockerTool\\WslDockerTool.Shared\\WslDockerTool.Shared.csproj": {
-      "version": "6.0.22-Release.7190187",
+      "version": "1.0.0",
       "restore": {
         "projectUniqueName": "D:\\project\\Example\\WslDockerTool\\WslDockerTool.Shared\\WslDockerTool.Shared.csproj",
         "projectName": "WslDockerTool.Shared",

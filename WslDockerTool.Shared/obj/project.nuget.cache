@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TLENG2nGuoIxkyChAWMlt2xDXg0L6W2RWmQfAvVI/9l/OTac6PLUiBN7L9IAvtJy6S611AuGZZ1pdL/81cN8Jw==",
+  "dgSpecHash": "l1MYhd3ILbgIkgAc+8eUQ4lEuLuUdXgPaEYvBAvntn86XYh3gt4LY2wqa+eHTea+2Io12LXdzV20buuqCp+vYA==",
   "success": true,
   "projectFilePath": "D:\\project\\Example\\WslDockerTool\\WslDockerTool.Shared\\WslDockerTool.Shared.csproj",
   "expectedPackageFiles": [

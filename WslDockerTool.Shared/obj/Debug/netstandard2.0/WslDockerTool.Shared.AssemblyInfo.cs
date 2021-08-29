@@ -13,11 +13,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("WslDockerTool.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("6.0.22.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("6.0.22-Release.7190187")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("WslDockerTool.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WslDockerTool.Shared")]
-[assembly: System.Reflection.AssemblyVersionAttribute("6.0.22.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // 由 MSBuild WriteCodeFragment 类生成。
 

@@ -72,7 +72,7 @@ namespace WslDockerTool.Net5.Views.Volume {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WslDockerTool.Net5;component/views/volume/volumelist.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WslDockerTool.Net5;V1.0.0.0;component/views/volume/volumelist.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Volume\VolumeList.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
