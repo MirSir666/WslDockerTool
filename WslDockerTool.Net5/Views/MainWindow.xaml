@@ -17,49 +17,54 @@
 	WindowStartupLocation="CenterScreen"
 	WindowStyle="None"
 	mc:Ignorable="d">
-	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="200" />
-			<ColumnDefinition Width="*" />
-		</Grid.ColumnDefinitions>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="35" />
-			<RowDefinition Height="*" />
-		</Grid.RowDefinitions>
-		<Grid Grid.ColumnSpan="2">
-			<Grid.Background>
-				<LinearGradientBrush>
-					<GradientStop Offset="0.2" Color="#2ebf91" />
-					<GradientStop Offset="0.8" Color="#8360c3" />
-				</LinearGradientBrush>
-			</Grid.Background>
-		
+	<Border Background="Transparent">
+		<Border
+			Background="Transparent"
+			BorderThickness="0"
+			CornerRadius="30">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="200" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="35" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+				<Grid Grid.Column="1" Grid.ColumnSpan="2">
+					<Grid.Background>
+						<LinearGradientBrush>
+							<GradientStop Offset="0.2" Color="#2ebf91" />
+							<GradientStop Offset="0.8" Color="#8360c3" />
+						</LinearGradientBrush>
+					</Grid.Background>
 
-			<StackPanel
-				Grid.ColumnSpan="2"
-				HorizontalAlignment="Right"
-				Orientation="Horizontal">
-				<StackPanel.Resources>
-					<Style TargetType="Button">
-						<Setter Property="Width" Value="35" />
-						<Setter Property="Height" Value="35" />
-						<Setter Property="Margin" Value="0" />
-						<Setter Property="BorderThickness" Value="5" />
-						<Setter Property="Opacity" Value="0.2" />
-					</Style>
-				</StackPanel.Resources>
 
-				<Button Content="─" />
-				<Button Content="☐" />
-				<Button Content="✕" />
-			</StackPanel>
-		</Grid>
+					<StackPanel
+						Grid.ColumnSpan="2"
+						HorizontalAlignment="Right"
+						Orientation="Horizontal">
+						<StackPanel.Resources>
+							<Style TargetType="Button">
+								<Setter Property="Width" Value="35" />
+								<Setter Property="Height" Value="35" />
+								<Setter Property="Margin" Value="0" />
+								<Setter Property="BorderThickness" Value="5" />
+								<Setter Property="Opacity" Value="0.2" />
+							</Style>
+						</StackPanel.Resources>
 
-		<!--<TabControl Grid.Row="1" Grid.Column="1">
+						<Button Content="─" />
+						<Button Content="☐" />
+						<Button Content="✕" />
+					</StackPanel>
+				</Grid>
+
+				<!--<TabControl Grid.Row="1" Grid.Column="1">
 			<TabItem Header="容器管理" />
 
 		</TabControl>-->
-		<!--<hc:TabControl
+				<!--<hc:TabControl
 			Grid.Row="1"
 			Grid.Column="1"
 			IsAnimationEnabled="True"
@@ -74,51 +79,52 @@
 			</hc:TabItem>
 		</hc:TabControl>-->
 
-		<!--<TabControl
+				<!--<TabControl
 			Grid.Row="1"
 			Grid.RowSpan="2"
 			Grid.Column="1"
 			prism:RegionManager.RegionName="ContentRegion" />-->
-		<TreeView
-			Grid.Row="1"
-			Grid.RowSpan="2"
-			Grid.Column="0"
-			ItemsSource="{Binding NavigateList}">
-			<hc:Interaction.Triggers>
-				<hc:EventTrigger EventName="SelectedItemChanged">
-					<hc:EventToCommand Command="{Binding NavigateCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type TreeView}}, Path=SelectedValue.Url}" />
-				</hc:EventTrigger>
-			</hc:Interaction.Triggers>
+				<TreeView
+					Grid.Row="0"
+					Grid.RowSpan="2"
+					Grid.Column="0"
+					ItemsSource="{Binding NavigateList}">
+					<hc:Interaction.Triggers>
+						<hc:EventTrigger EventName="SelectedItemChanged">
+							<hc:EventToCommand Command="{Binding NavigateCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type TreeView}}, Path=SelectedValue.Url}" />
+						</hc:EventTrigger>
+					</hc:Interaction.Triggers>
 
-			<TreeView.ItemTemplate>
-				<DataTemplate>
-					<StackPanel Height="45" Orientation="Horizontal">
-						<controls:Icon
-							Margin="0,0,5,0"
-							Foreground="{StaticResource CharacteristicBrush}"
-							Opacity="0.8"
-							Value="{Binding Icon}">
+					<TreeView.ItemTemplate>
+						<DataTemplate>
+							<StackPanel Height="45" Orientation="Horizontal">
+								<controls:Icon
+									Margin="0,0,5,0"
+									Foreground="{StaticResource CharacteristicBrush}"
+									Opacity="0.8"
+									Value="{Binding Icon}">
 
-							<!--<controls:Icon.Foreground>
+									<!--<controls:Icon.Foreground>
 								<LinearGradientBrush MappingMode="Absolute" StartPoint="0,0" EndPoint="0,24">
 									<GradientStop Offset="0.2" Color="#2ebf91" />
 									<GradientStop Offset="0.8" Color="#8360c3" />
 								</LinearGradientBrush>
 							</controls:Icon.Foreground>-->
-						</controls:Icon>
-						<TextBlock VerticalAlignment="Center" Text="{Binding Name}" />
-					</StackPanel>
-				</DataTemplate>
-			</TreeView.ItemTemplate>
+								</controls:Icon>
+								<TextBlock VerticalAlignment="Center" Text="{Binding Name}" />
+							</StackPanel>
+						</DataTemplate>
+					</TreeView.ItemTemplate>
 
-		</TreeView>
+				</TreeView>
 
-		<ContentControl
-			Grid.Row="2"
-			Grid.Column="1"
-			prism:RegionManager.RegionName="ContentRegion" />
+				<ContentControl
+					Grid.Row="2"
+					Grid.Column="1"
+					prism:RegionManager.RegionName="ContentRegion" />
+			</Grid>
+		</Border>
 
+	</Border>
 
-
-	</Grid>
 </hc:Window>

@@ -6,13 +6,13 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "WslDockerTool.Net5/6.0.22-Release.7190187": {
+      "WslDockerTool.Net5/1.0.0": {
         "dependencies": {
           "AutoMapper": "10.1.1",
           "HandyControl": "3.2.0",
           "Prism.DryIoc": "8.1.97",
           "Prism.Wpf": "8.1.97",
-          "WslDockerTool.Shared": "6.0.22-Release.7190187"
+          "WslDockerTool.Shared": "1.0.0"
         },
         "runtime": {
           "WslDockerTool.Net5.dll": {}
@@ -235,7 +235,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "WslDockerTool.Shared/6.0.22-Release.7190187": {
+      "WslDockerTool.Shared/1.0.0": {
         "dependencies": {
           "Docker.DotNet": "3.125.4",
           "Prism.DryIoc.Extensions": "8.0.62"
@@ -247,7 +247,7 @@
     }
   },
   "libraries": {
-    "WslDockerTool.Net5/6.0.22-Release.7190187": {
+    "WslDockerTool.Net5/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -427,7 +427,7 @@
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
     },
-    "WslDockerTool.Shared/6.0.22-Release.7190187": {
+    "WslDockerTool.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -13,6 +13,18 @@ namespace WslDockerTool.Net5.Models.Container
 
 		public IList<string> Names { get; set; }
 
+
+		public string NameF
+		{
+			get {
+				if (Names != null && Names.Any())
+					return string.Join(',', Names);
+
+				return string.Empty;
+			}
+		}
+
+
 		public string Image { get; set; }
 
 		public string ImageID { get; set; }
@@ -21,11 +33,30 @@ namespace WslDockerTool.Net5.Models.Container
 
 		public DateTime Created { get; set; }
 
-		public IList<string> Ports { get; set; }
+		public IList<Port> Ports { get; set; }
+		private string nameF;
+		public string PortF
+		{
+			get
+			{
+				if (Ports != null && Ports.Any())
+					return string.Join(',', Ports.Select(o => o.PublicPort).ToList());
+				
+				return string.Empty;
+			}
+		}
 
 		public string State { get; set; }
 		public string Status { get; set; }
 
 
+	}
+
+	public class Port
+	{
+		public string IP { get; set; }
+		public ushort PrivatePort { get; set; }
+		public ushort PublicPort { get; set; }
+		public string Type { get; set; }
 	}
 }

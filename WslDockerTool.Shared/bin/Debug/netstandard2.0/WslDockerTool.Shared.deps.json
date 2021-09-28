@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "WslDockerTool.Shared/6.0.22-Release.7190187": {
+      "WslDockerTool.Shared/1.0.0": {
         "dependencies": {
           "Docker.DotNet": "3.125.4",
           "NETStandard.Library": "2.0.3",
@@ -178,7 +178,7 @@
     }
   },
   "libraries": {
-    "WslDockerTool.Shared/6.0.22-Release.7190187": {
+    "WslDockerTool.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

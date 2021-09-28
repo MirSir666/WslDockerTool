@@ -30,6 +30,7 @@ namespace WslDockerTool.Net5.Core
 			CreateMap<VolumeResponse, VolumeListItemModel>()
 				.AfterMap((src, dest) => dest.Created = DateTime.Parse(src.CreatedAt));
 			CreateMap<ContainerListResponse, ContainerListItemModel>();
+			CreateMap<Docker.DotNet.Models.Port, WslDockerTool.Net5.Models.Container.Port>();
 				//.AfterMap((src, dest) => dest.Created = DateTime.Parse(src.CreatedAt));
 		}
 	}
