@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Threading;
+using WslDockerTool.Net5.Models;
 
 namespace WslDockerTool.Net5.Manage
 {
-    public static class CollectionExtensions
+    public  static partial class CollectionExtensions
     {
         public static void AddRange<T>(this Collection<T> collection, params T[] ts)
         {
@@ -46,6 +47,20 @@ namespace WslDockerTool.Net5.Manage
                 collection.Clear();
                 collection.AddRange(ts);
             });
+		}
+	}
+
+    public static partial class CollectionExtensions
+    {
+        public static IEnumerable<T> GetSelectList<T>(this Collection<T> collection)
+            where T: DataGirdMultiple
+        {
+            return collection.Where(o => o.IsSelected == true).ToArray();
         }
     }
+
+
+
+
+
 }

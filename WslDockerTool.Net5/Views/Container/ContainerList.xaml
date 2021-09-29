@@ -17,14 +17,86 @@
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
 		<StackPanel>
+			<!--<hc:SplitButton Content="Primary">
+				<hc:SplitButton.DropDownContent>
+					<StackPanel>
+						<MenuItem Header="Title" />
+						<MenuItem Header="Title" />
+						<MenuItem Header="Title" />
+					</StackPanel>
+				</hc:SplitButton.DropDownContent>
+			</hc:SplitButton>-->
+			<hc:ButtonGroup Width="400">
 
-			<hc:ButtonGroup Width="200">
-				<Button Content="查询" Style="{DynamicResource ButtonDashedSuccess}" />
+				<!--<hc:ContextMenuToggleButton Name="tewer" Content="测试">
+
+					<hc:ContextMenuToggleButton.Resources>
+						<Style TargetType="ContextMenu">
+							<Setter Property="Width" Value="50" />
+							<Setter Property="Padding" Value="0" />
+						</Style>
+					</hc:ContextMenuToggleButton.Resources>
+
+					<hc:ContextMenuToggleButton.Menu>
+						<ContextMenu>
+							<MenuItem Header="测试1" />
+							<MenuItem Header="测试2" />
+						</ContextMenu>
+					</hc:ContextMenuToggleButton.Menu>
+				</hc:ContextMenuToggleButton>-->
+				<Button
+					Command="{Binding QueryCommand}"
+					Content="启动"
+					Style="{DynamicResource ButtonDashedSuccess}" />
+				<Button Content="停止" Style="{DynamicResource ButtonDashedInfo}" />
+				<Button
+					Command="{Binding QueryCommand}"
+					Content="查询"
+					Style="{DynamicResource ButtonDashedSuccess}" />
 				<Button Content="添加" Style="{DynamicResource ButtonDashedInfo}" />
-				<Button Content="移除" Style="{DynamicResource ButtonDashedInfo}" />
+				<Button
+					Command="{Binding RemoveCommand}"
+					Content="移除"
+					Style="{DynamicResource ButtonDashedInfo}" />
+
+
 			</hc:ButtonGroup>
 		</StackPanel>
-		<DataGrid
+
+		<ListView Grid.Row="1" ItemsSource="{Binding Items}">
+			<ListView.View>
+				<GridView>
+					<GridViewColumn>
+						<CheckBox IsChecked="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=DataGridRow}}" />
+					</GridViewColumn>
+					<GridViewColumn
+						Width="100"
+						DisplayMemberBinding="{Binding ID}"
+						Header="ID" />
+					<GridViewColumn
+						Width="100"
+						DisplayMemberBinding="{Binding NameF}"
+						Header="名称" />
+					<GridViewColumn
+						Width="100"
+						DisplayMemberBinding="{Binding Image}"
+						Header="镜像名称" />
+					<GridViewColumn
+						Width="100"
+						DisplayMemberBinding="{Binding PortF}"
+						Header="端口" />
+					<GridViewColumn
+						Width="100"
+						DisplayMemberBinding="{Binding Status}"
+						Header="状态" />
+					<GridViewColumn
+						Width="120"
+						DisplayMemberBinding="{Binding Created, StringFormat={}{0:yyyy-MM-dd}}"
+						Header="创建时间" />
+				</GridView>
+			</ListView.View>
+		</ListView>
+		<!--<DataGrid
 			Grid.Row="1"
 			AutoGenerateColumns="False"
 			HeadersVisibility="All"
@@ -32,10 +104,22 @@
 			RowHeaderWidth="60">
 			<DataGrid.RowHeaderTemplate>
 				<DataTemplate>
-					<CheckBox IsChecked="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=DataGridRow}}" />
+					<Grid>
+						<CheckBox IsChecked="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=DataGridRow}}" />
+					</Grid>
+
+					-->
+		<!--<CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=DataGridRow}}" />-->
+		<!--
+
 				</DataTemplate>
 			</DataGrid.RowHeaderTemplate>
+
 			<DataGrid.Columns>
+
+				-->
+		<!--<DataGridCheckBoxColumn Binding="{Binding IsSelected}" CanUserResize="False" />-->
+		<!--
 				<DataGridTextColumn
 					Width="120"
 					Binding="{Binding ID}"
@@ -65,6 +149,6 @@
 					Binding="{Binding Created, StringFormat={}{0:yyyy-MM-dd}}"
 					Header="创建时间" />
 			</DataGrid.Columns>
-		</DataGrid>
+		</DataGrid>-->
 	</Grid>
 </UserControl>

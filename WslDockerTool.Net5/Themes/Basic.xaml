@@ -7,22 +7,24 @@
 		<ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml" />
 		<ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml" />
 		<ResourceDictionary Source="pack://application:,,,/WslDockerTool.Net5;component/Themes/DataGrid.xaml" />
+		<ResourceDictionary Source="pack://application:,,,/WslDockerTool.Net5;component/Themes/Colors.xaml" />
 	</ResourceDictionary.MergedDictionaries>
 	<Style BasedOn="{StaticResource TextBlockDefault}" TargetType="TextBlock">
 		<Setter Property="FontSize" Value="20" />
 		<Setter Property="VerticalAlignment" Value="Center" />
 	</Style>
 	<converters:BytesToStringConverter x:Key="bytesToStringConverter" />
+
 	<!--<Style BasedOn="{StaticResource BaseStyle}" TargetType="DataGrid" />-->
 
 	<!--<Style BasedOn="{StaticResource TreeViewBaseStyle}" TargetType="TreeView">
 		<Style.Triggers>
 
-			-->
-	<!--<Trigger Property="is" Value="True">
-				<Setter Property="Background" Value="Beige" />
-			</Trigger>-->
-	<!--
+
+			<Trigger Property="IsKeyboardFocused" Value="True">
+				<Setter Property="Background" Value="Yellow" />
+			</Trigger>
+
 		</Style.Triggers>
 
 	</Style>-->
@@ -56,5 +58,8 @@
 	</Brush>-->
 	<!--<Style BasedOn="{StaticResource  BaseStyle }" x:Key="BaseWindow" TargetType="hc:Window">
 		
+	</Style>-->
+	<!--<Style TargetType="hc:ContextMenuButton">
+		<Setter Property="ContextMenu.Width" Value="hc:ContextMenuButton.Width" />
 	</Style>-->
 </ResourceDictionary>

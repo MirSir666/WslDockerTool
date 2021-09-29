@@ -9,5 +9,6 @@ namespace WslDockerTool.Shared
 	public interface IContainerHandler
 	{
 		Task<IList<ContainerListResponse>> ListContainersAsync(ContainersListParameters parameters=null);
+		void Removes(params string[] ids);
 	}
 }

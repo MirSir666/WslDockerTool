@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Prism.Commands;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -21,14 +22,20 @@ namespace WslDockerTool.Net5.ViewModels.Image
 		{
 			this.imageHandler = imageHandler;
 			this.mapper = mapper;
+			RemoveCommand = new DelegateCommand(Remove);
 			Init();
 		}
+		public DelegateCommand RemoveCommand { get; set; }
 
 		public async void Init()
 		{
 			var ret = await imageHandler.ListImagesAsync(new Docker.DotNet.Models.ImagesListParameters());
 			var list = mapper.Map<List<ImageListItemModel>>(ret);
 			this.Items.AddRange(list);
+		}
+		public void Remove()
+		{
+
 		}
 	}
 }

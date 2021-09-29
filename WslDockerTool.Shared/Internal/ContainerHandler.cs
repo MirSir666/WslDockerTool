@@ -21,5 +21,13 @@ namespace WslDockerTool.Shared.Internal
 			if (parameters == null) parameters = new ContainersListParameters() { All=true };
 			return dockerClient.Containers.ListContainersAsync(parameters);
 		}
+
+		public void Removes(params string[] ids)
+		{
+			foreach (var id in ids)
+			{
+				dockerClient.Containers.RemoveContainerAsync(id, new ContainerRemoveParameters() { Force=true });
+			}
+		}
 	}
 }

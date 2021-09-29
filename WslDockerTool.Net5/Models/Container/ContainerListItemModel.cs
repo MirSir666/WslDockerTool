@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prism.Mvvm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WslDockerTool.Net5.Models.Container
 {
-	public class ContainerListItemModel
+	public class ContainerListItemModel : BindableBase, DataGirdMultiple
 	{
 
 		public string ID { get; set; }
@@ -34,7 +35,6 @@ namespace WslDockerTool.Net5.Models.Container
 		public DateTime Created { get; set; }
 
 		public IList<Port> Ports { get; set; }
-		private string nameF;
 		public string PortF
 		{
 			get
@@ -49,7 +49,12 @@ namespace WslDockerTool.Net5.Models.Container
 		public string State { get; set; }
 		public string Status { get; set; }
 
-
+		private bool _isSelected ;
+		public bool IsSelected
+		{
+			get { return _isSelected; }
+			set { SetProperty(ref _isSelected, value); }
+		}
 	}
 
 	public class Port

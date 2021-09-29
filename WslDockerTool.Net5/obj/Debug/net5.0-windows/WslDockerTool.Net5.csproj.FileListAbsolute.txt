@@ -63,3 +63,4 @@ D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\Vie
 D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\Views\Home\Home.baml
 D:\project\Example\WslDockerTool\WslDockerTool.Net5\bin\Debug\net5.0-windows\AutoMapper.dll
 D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\Themes\DataGrid.baml
+D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\Themes\Colors.baml

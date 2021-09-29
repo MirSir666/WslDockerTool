@@ -48,6 +48,7 @@ namespace WslDockerTool.Net5
 			containerRegistry.RegisterForNavigation<VolumeList>("VolumeList");
 			containerRegistry.RegisterForNavigation<NetworkList>("NetworkList");
 			containerRegistry.RegisterForNavigation<PortProxyList>("PortProxyList");
+			//PortProxyList
 		}
 	}
 }

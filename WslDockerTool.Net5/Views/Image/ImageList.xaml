@@ -22,7 +22,7 @@
 			<hc:ButtonGroup Width="200">
 				<Button Content="查询" Style="{DynamicResource ButtonDashedSuccess}" />
 				<Button Content="添加" Style="{DynamicResource ButtonDashedInfo}" />
-				<Button Content="移除" Style="{DynamicResource ButtonDashedInfo}" />
+				<Button Content="移除" 	Command="{Binding RemoveCommand}" Style="{DynamicResource ButtonDashedInfo}" />
 			</hc:ButtonGroup>
 		</StackPanel>
 		<DataGrid

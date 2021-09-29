@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Prism.Commands;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -21,14 +22,20 @@ namespace WslDockerTool.Net5.ViewModels.Network
 		{
 			this.networkHandler = networkHandler;
 			this.mapper = mapper;
+			RemoveCommand = new DelegateCommand(Remove);
 			Init();
 		}
+		public DelegateCommand RemoveCommand { get; set; }
 
 		public async void Init()
 		{
 			var ret = await networkHandler.ListNetworksAsync();
 			var list = mapper.Map<List<NetworkListItemModel>>(ret);
 			this.Items.AddRange(list);
+		}
+		public void Remove()
+		{
+
 		}
 	}
 }

@@ -11,5 +11,27 @@
 	prism:ViewModelLocator.AutoWireViewModel="True"
 	mc:Ignorable="d">
 
-	<Grid />
+	<Grid >
+		<DataGrid HeadersVisibility="All" RowHeaderWidth="60" AutoGenerateColumns="False" ItemsSource="{Binding DataList}">
+			<DataGrid.RowHeaderTemplate>
+				<DataTemplate>
+					<CheckBox IsChecked="{Binding IsSelected,RelativeSource={RelativeSource AncestorType=DataGridRow}}"/>
+				</DataTemplate>
+			</DataGrid.RowHeaderTemplate>
+			<DataGrid.Columns>
+				<DataGridTextColumn IsReadOnly="True" Width="80" CanUserResize="False" Binding="{Binding Index}" Header="rwerwer"/>
+				<DataGridTemplateColumn Width="60" CanUserResize="False">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Image Source="{Binding ImgPath}" Width="32" Height="32" Stretch="Uniform"/>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+				<DataGridTextColumn Width="1" Binding="{Binding Name}" Header="34234"/>
+				<DataGridCheckBoxColumn Width="100" CanUserResize="False" Binding="{Binding IsSelected}" Header="erwer"/>
+				<DataGridComboBoxColumn  Width="100" CanUserResize="False" SelectedValueBinding="{Binding Type}" Header="werwerw"/>
+				<DataGridTextColumn Width="1" Binding="{Binding Remark}" Header="werwrewr"/>
+			</DataGrid.Columns>
+		</DataGrid>
+	</Grid>
 </UserControl>
