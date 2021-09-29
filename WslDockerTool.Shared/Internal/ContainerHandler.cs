@@ -22,12 +22,28 @@ namespace WslDockerTool.Shared.Internal
 			return dockerClient.Containers.ListContainersAsync(parameters);
 		}
 
-		public void Removes(params string[] ids)
+		public async Task RemovesContainersAsync(params string[] ids)
 		{
 			foreach (var id in ids)
-			{
-				dockerClient.Containers.RemoveContainerAsync(id, new ContainerRemoveParameters() { Force=true });
-			}
+			   await dockerClient.Containers.RemoveContainerAsync(id, new ContainerRemoveParameters() { Force=true });
+		}
+
+		public async Task RestartContainerAsync(params string[] ids)
+		{
+			foreach (var id in ids)
+				await dockerClient.Containers.RestartContainerAsync(id, new ContainerRestartParameters());
+		}
+
+		public async Task StartContainerAsync(params string[] ids)
+		{
+			foreach (var id in ids)
+				await dockerClient.Containers.StartContainerAsync(id,new ContainerStartParameters());
+		}
+
+		public async Task StopContainerAsync(params string[] ids)
+		{
+			foreach (var id in ids)
+				await dockerClient.Containers.StopContainerAsync(id,new ContainerStopParameters());
 		}
 	}
 }

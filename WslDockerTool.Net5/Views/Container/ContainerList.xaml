@@ -13,7 +13,7 @@
 	mc:Ignorable="d">
 	<Grid>
 		<Grid.RowDefinitions>
-			<RowDefinition Height="50" />
+			<RowDefinition Height="40" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
 		<StackPanel>
@@ -45,10 +45,18 @@
 					</hc:ContextMenuToggleButton.Menu>
 				</hc:ContextMenuToggleButton>-->
 				<Button
-					Command="{Binding QueryCommand}"
+					Command="{Binding StartCommand}"
 					Content="启动"
 					Style="{DynamicResource ButtonDashedSuccess}" />
-				<Button Content="停止" Style="{DynamicResource ButtonDashedInfo}" />
+
+				<Button
+					Command="{Binding StopCommand}"
+					Content="停止"
+					Style="{DynamicResource ButtonDashedInfo}" />
+				<Button
+					Command="{Binding RestartCommand}"
+					Content="重启"
+					Style="{DynamicResource ButtonDashedSuccess}" />
 				<Button
 					Command="{Binding QueryCommand}"
 					Content="查询"
@@ -63,71 +71,32 @@
 			</hc:ButtonGroup>
 		</StackPanel>
 
-		<ListView Grid.Row="1" ItemsSource="{Binding Items}">
-			<ListView.View>
-				<GridView>
-					<GridViewColumn>
-						<CheckBox IsChecked="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=DataGridRow}}" />
-					</GridViewColumn>
-					<GridViewColumn
-						Width="100"
-						DisplayMemberBinding="{Binding ID}"
-						Header="ID" />
-					<GridViewColumn
-						Width="100"
-						DisplayMemberBinding="{Binding NameF}"
-						Header="名称" />
-					<GridViewColumn
-						Width="100"
-						DisplayMemberBinding="{Binding Image}"
-						Header="镜像名称" />
-					<GridViewColumn
-						Width="100"
-						DisplayMemberBinding="{Binding PortF}"
-						Header="端口" />
-					<GridViewColumn
-						Width="100"
-						DisplayMemberBinding="{Binding Status}"
-						Header="状态" />
-					<GridViewColumn
-						Width="120"
-						DisplayMemberBinding="{Binding Created, StringFormat={}{0:yyyy-MM-dd}}"
-						Header="创建时间" />
-				</GridView>
-			</ListView.View>
-		</ListView>
-		<!--<DataGrid
+		<DataGrid
 			Grid.Row="1"
 			AutoGenerateColumns="False"
 			HeadersVisibility="All"
 			ItemsSource="{Binding Items}"
 			RowHeaderWidth="60">
+
 			<DataGrid.RowHeaderTemplate>
 				<DataTemplate>
-					<Grid>
-						<CheckBox IsChecked="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=DataGridRow}}" />
-					</Grid>
-
-					-->
-		<!--<CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=DataGridRow}}" />-->
-		<!--
-
+					<CheckBox IsChecked="{Binding Path=DataContext.IsSelected, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGridRow}}}" />
 				</DataTemplate>
 			</DataGrid.RowHeaderTemplate>
 
 			<DataGrid.Columns>
 
-				-->
-		<!--<DataGridCheckBoxColumn Binding="{Binding IsSelected}" CanUserResize="False" />-->
-		<!--
+
+				<!--<DataGridCheckBoxColumn Binding="{Binding IsSelected}" CanUserResize="False" />-->
+
 				<DataGridTextColumn
-					Width="120"
+					Width="*"
 					Binding="{Binding ID}"
 					CanUserResize="False"
 					Header="id"
 					IsReadOnly="True" />
 				<DataGridTextColumn
-					Width="80"
+					Width="*"
 					Binding="{Binding NameF}"
 					Header="名称" />
 				<DataGridTextColumn
@@ -141,14 +110,17 @@
 					Header="端口" />
 				<DataGridTextColumn
 					Width="*"
+					MinWidth="130"
 					Binding="{Binding Status}"
 					Header="状态" />
 
 				<DataGridTextColumn
 					Width="120"
+					MinWidth="120"
 					Binding="{Binding Created, StringFormat={}{0:yyyy-MM-dd}}"
 					Header="创建时间" />
 			</DataGrid.Columns>
-		</DataGrid>-->
+
+		</DataGrid>
 	</Grid>
 </UserControl>
