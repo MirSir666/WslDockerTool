@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using WslDockerTool.Net5.Core.Mapping;
+using WslDockerTool.Net5.ViewModels.Container;
 using WslDockerTool.Net5.Views;
 using WslDockerTool.Net5.Views.Container;
 using WslDockerTool.Net5.Views.Image;
@@ -48,6 +49,9 @@ namespace WslDockerTool.Net5
 			containerRegistry.RegisterForNavigation<VolumeList>("VolumeList");
 			containerRegistry.RegisterForNavigation<NetworkList>("NetworkList");
 			containerRegistry.RegisterForNavigation<PortProxyList>("PortProxyList");
+
+
+			containerRegistry.RegisterDialog<CreateContainer, CreateContainerViewModel>("CreateContainer");
 			//PortProxyList
 		}
 	}

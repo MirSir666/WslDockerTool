@@ -61,7 +61,10 @@
 					Command="{Binding QueryCommand}"
 					Content="查询"
 					Style="{DynamicResource ButtonDashedSuccess}" />
-				<Button Content="添加" Style="{DynamicResource ButtonDashedInfo}" />
+				<Button
+					Command="{Binding CreateCommand}"
+					Content="添加"
+					Style="{DynamicResource ButtonDashedInfo}" />
 				<Button
 					Command="{Binding RemoveCommand}"
 					Content="移除"
@@ -85,8 +88,6 @@
 			</DataGrid.RowHeaderTemplate>
 
 			<DataGrid.Columns>
-
-
 				<!--<DataGridCheckBoxColumn Binding="{Binding IsSelected}" CanUserResize="False" />-->
 
 				<DataGridTextColumn

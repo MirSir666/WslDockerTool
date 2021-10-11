@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WslDockerTool.Net5.Views.Container
@@ -17,7 +18,7 @@ namespace WslDockerTool.Net5.Views.Container
 	/// <summary>
 	/// CreateContainer.xaml 的交互逻辑
 	/// </summary>
-	public partial class CreateContainer : Window
+	public partial class CreateContainer : UserControl
 	{
 		public CreateContainer()
 		{

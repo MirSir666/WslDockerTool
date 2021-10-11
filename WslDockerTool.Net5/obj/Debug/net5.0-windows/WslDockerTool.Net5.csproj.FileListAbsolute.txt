@@ -52,7 +52,6 @@ D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\Wsl
 D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\WslDockerTool.Net5.AssemblyInfoInputs.cache
 D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\WslDockerTool.Net5.AssemblyInfo.cs
 D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\WslDockerTool.Net5.csproj.CoreCompileInputs.cache
-D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\WslDockerTool.Net5.csproj.CopyComplete
 D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\WslDockerTool.Net5.dll
 D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\ref\WslDockerTool.Net5.dll
 D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\WslDockerTool.Net5.pdb

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,16 +18,19 @@ namespace WslDockerTool.Net5.ViewModels.Container
 	{
 		private readonly IContainerHandler containerHandler;
 		private readonly IMapper mapper;
+		private readonly IDialogService dialogService;
 
-		public ContainerListViewModel(IContainerHandler containerHandler, IMapper mapper)
+		public ContainerListViewModel(IContainerHandler containerHandler, IMapper mapper, IDialogService dialogService)
 		{
 			this.containerHandler = containerHandler;
 			this.mapper = mapper;
+			this.dialogService = dialogService;
 			RestartCommand = new DelegateCommand(Restart);
 			RemoveCommand = new DelegateCommand(Remove);
 			QueryCommand = new DelegateCommand(Query);
 			StartCommand = new DelegateCommand(Start);
 			StopCommand = new DelegateCommand(Stop);
+			CreateCommand = new DelegateCommand(Create);
 			InitData();
 		}
 		public DelegateCommand RemoveCommand { get; set; }
@@ -34,6 +38,8 @@ namespace WslDockerTool.Net5.ViewModels.Container
 		public DelegateCommand StartCommand { get; set; }
 		public DelegateCommand StopCommand { get; set; }
 		public DelegateCommand RestartCommand { get; set; }
+
+		public DelegateCommand CreateCommand { get; set; }
 
 		public async void InitData()
 		{
@@ -72,6 +78,12 @@ namespace WslDockerTool.Net5.ViewModels.Container
 				await containerHandler.StopContainerAsync(ids);
 				Query();
 			}
+		}
+
+		public async void Create()
+		{
+			dialogService.ShowDialog("CreateContainer");
+			Query();
 		}
 
 		public async void Restart()

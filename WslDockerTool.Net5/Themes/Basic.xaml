@@ -28,14 +28,7 @@
 		</Style.Triggers>
 
 	</Style>-->
-	<!--<Style BasedOn="{StaticResource TreeViewItemBaseStyle}" TargetType="TreeViewItem">
-		<Style.Setters />
-		<Style.Triggers>
-			<Trigger Property="IsSelected" Value="True">
-				<Setter Property="Foreground" Value="Chocolate" />
-			</Trigger>
-		</Style.Triggers>
-	</Style>-->
+
 
 	<LinearGradientBrush x:Key="CharacteristicBrush" MappingMode="Absolute" StartPoint="0,0" EndPoint="0,24">
 		<GradientStop Offset="0.2" Color="#2ebf91" />
