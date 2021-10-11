@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 D:\project\Example\WslDockerTool\WslDockerTool.Net5\App.xaml
-131376344131
+14295692893
 
-38-469498905
+42-11288505
 206-1408511283
-Themes\Basic.xaml;Themes\Colors.xaml;Themes\DataGrid.xaml;Themes\Icon.xaml;Views\Container\ContainerList.xaml;Views\Container\CreateContainer.xaml;Views\Home\Home.xaml;Views\Image\ImageList.xaml;Views\MainUI1.xaml;Views\MainWindow.xaml;Views\Network\NetworkList.xaml;Views\PortProxy\PortProxyList.xaml;Views\Volume\VolumeList.xaml;
+Controls\SearchComboBox\SearchComboBox.xaml;Themes\Basic.xaml;Themes\Colors.xaml;Themes\DataGrid.xaml;Themes\Icon.xaml;Views\Container\ContainerList.xaml;Views\Container\CreateContainer.xaml;Views\Home\Home.xaml;Views\Image\ImageList.xaml;Views\MainUI1.xaml;Views\MainWindow.xaml;Views\Network\NetworkList.xaml;Views\PortProxy\PortProxyList.xaml;Views\Volume\VolumeList.xaml;
 
 True
 

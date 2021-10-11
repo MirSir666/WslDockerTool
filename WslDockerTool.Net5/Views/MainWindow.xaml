@@ -115,10 +115,14 @@
 								</LinearGradientBrush>
 							</controls:Icon.Foreground>-->
 								</controls:Icon>
-								<TextBlock VerticalAlignment="Center" Text="{Binding Name}" />
+								<TextBlock
+									VerticalAlignment="Center"
+									Style="{StaticResource TextBlockSubTitle}"
+									Text="{Binding Name}" />
 							</StackPanel>
 						</DataTemplate>
 					</TreeView.ItemTemplate>
+
 
 				</TreeView>
 
