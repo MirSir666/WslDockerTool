@@ -29,7 +29,7 @@ namespace WslDockerTool.Net5.ViewModels.Container
 			ButtonResult button = parameter ?? ButtonResult.None;
 			if (button == ButtonResult.OK)
 			{
-				containerHandler.cr
+				//containerHandler.cr
 			}
 			RaiseRequestClose(new DialogResult(button, new DialogParameters()));
 		}
