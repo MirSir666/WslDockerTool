@@ -10,12 +10,24 @@
 		<ResourceDictionary Source="pack://application:,,,/WslDockerTool.Net5;component/Themes/DataGrid.xaml" />
 		<ResourceDictionary Source="pack://application:,,,/WslDockerTool.Net5;component/Themes/Colors.xaml" />
 	</ResourceDictionary.MergedDictionaries>
-	<Style BasedOn="{StaticResource TextBlockDefault}" TargetType="TextBlock">
+	<!--<Style BasedOn="{StaticResource TextBlockDefault}" TargetType="TextBlock">
 		<Setter Property="FontSize" Value="20" />
 		<Setter Property="VerticalAlignment" Value="Center" />
 		<Setter Property="HorizontalAlignment" Value="Left" />
-	</Style>
+	</Style>-->
 	<converters:BytesToStringConverter x:Key="bytesToStringConverter" />
+	<Style
+		x:Key="ButtonOk"
+		BasedOn="{StaticResource MessageBoxPrimaryButtonStyle}"
+		TargetType="Button">
+		<Setter Property="Background" Value="#3a738c" />
+		<Setter Property="Foreground" Value="Azure" />
+	</Style>
+
+	<Style
+		x:Key="ButtonCancel"
+		BasedOn="{StaticResource MessageBoxButtonStyle}"
+		TargetType="Button" />
 
 	<!--<Style BasedOn="{StaticResource BaseStyle}" TargetType="DataGrid" />-->
 

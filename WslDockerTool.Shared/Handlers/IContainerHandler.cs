@@ -10,9 +10,10 @@ namespace WslDockerTool.Shared
 	{
 		Task<IList<ContainerListResponse>> ListContainersAsync(ContainersListParameters parameters=null);
 		Task RemovesContainersAsync(params string[] ids);
-
 		Task StartContainerAsync(params string[] ids);
 		Task StopContainerAsync(params string[] ids);
 		Task RestartContainerAsync(params string[] ids);
+
+		Task<CreateContainerResponse> CreateContainerAsync(CreateContainerParameters parameters);
 	}
 }

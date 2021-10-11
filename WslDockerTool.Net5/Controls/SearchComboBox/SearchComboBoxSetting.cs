@@ -31,7 +31,8 @@ namespace WslDockerTool.Net5.Controls
         /// 请注意，该值越大，打开下拉列表就越重。
         /// 默认值：100。
         /// </summary>
-        public virtual int MaxSuggestionCount
+        public virtual int MaxSuggestionCount 
+
         {
             get { return 100; }
         }

@@ -67,3 +67,5 @@ D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\Vie
 D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\Views\Container\CreateContainer.baml
 D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\Controls\SearchComboBox\SearchComboBox.g.cs
 D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\Controls\SearchComboBox\SearchComboBox.baml
+D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\Controls\Dialogs\DialogWindow.g.cs
+D:\project\Example\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\Controls\Dialogs\DialogWindow.baml

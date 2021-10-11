@@ -57,5 +57,28 @@
 			<TextBlock>镜像名称:</TextBlock>
 			<TextBox />
 		</StackPanel>
+
+		<StackPanel
+			Grid.Row="5"
+			Grid.Column="1"
+			HorizontalAlignment="Right"
+			Orientation="Horizontal">
+			<Button
+				Margin="10,0"
+				hc:BorderElement.CornerRadius="5"
+				Command="{Binding CloseCommand}"
+				CommandParameter="{x:Static prism:ButtonResult.OK}"
+				Content="确认"
+				IsDefault="True"
+				Style="{StaticResource ButtonOk}" />
+			<Button
+				Margin="10,0"
+				hc:BorderElement.CornerRadius="5"
+				Command="{Binding CloseCommand}"
+				CommandParameter="{x:Static prism:ButtonResult.Cancel}"
+				Content="取消"
+				IsCancel="True"
+				Style="{StaticResource ButtonCancel}" />
+		</StackPanel>
 	</Grid>
 </UserControl>

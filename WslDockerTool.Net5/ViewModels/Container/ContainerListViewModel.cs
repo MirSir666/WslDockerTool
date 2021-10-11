@@ -80,10 +80,13 @@ namespace WslDockerTool.Net5.ViewModels.Container
 			}
 		}
 
-		public async void Create()
+		public  void Create()
 		{
-			dialogService.ShowDialog("CreateContainer");
-			Query();
+			dialogService.ShowDialog("CreateContainer",o=> {
+				if (o.Result == ButtonResult.OK)
+					Query();
+			});
+			
 		}
 
 		public async void Restart()

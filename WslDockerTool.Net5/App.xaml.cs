@@ -8,6 +8,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using WslDockerTool.Net5.Controls.Dialogs;
 using WslDockerTool.Net5.Core.Mapping;
 using WslDockerTool.Net5.ViewModels.Container;
 using WslDockerTool.Net5.Views;
@@ -28,10 +29,11 @@ namespace WslDockerTool.Net5
 	{
 		protected override Window CreateShell()
 		{
+			
 			return Container.Resolve<MainWindow>();
 		}
 
-
+		
 		protected override IContainerExtension CreateContainerExtension()
 		{
 			var container = new Container(CreateContainerRules());
@@ -44,6 +46,7 @@ namespace WslDockerTool.Net5
 
 		protected override void RegisterTypes(IContainerRegistry containerRegistry)
 		{
+			containerRegistry.RegisterDialogWindow<DialogWindow>();
 			containerRegistry.RegisterForNavigation<ContainerList>("ContainerList");
 			containerRegistry.RegisterForNavigation<ImageList>("ImageList");
 			containerRegistry.RegisterForNavigation<VolumeList>("VolumeList");

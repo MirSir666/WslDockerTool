@@ -29,5 +29,7 @@ namespace WslDockerTool.Net5.Core.Mvvm
         public virtual void OnDialogClosed() { }
 
         public virtual void OnDialogOpened(IDialogParameters parameters) { }
+
+       
     }
 }
