@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace WslDockerTool.Net5.Models.Container
 {
-	public class ContainerListItemModel : BindableBase, DataGirdMultiple
+	public class ContainerListItemModel : BindableBase
 	{
 
 		public string ID { get; set; }
 
 		public IList<string> Names { get; set; }
 
-
+		string nameF;
 		public string NameF
 		{
 			get {
@@ -23,7 +23,9 @@ namespace WslDockerTool.Net5.Models.Container
 
 				return string.Empty;
 			}
+			set { nameF=value; }
 		}
+		
 
 
 		public string Image { get; set; }
@@ -44,17 +46,14 @@ namespace WslDockerTool.Net5.Models.Container
 				
 				return string.Empty;
 			}
+			set { portF = value; }
 		}
+		string portF;
 
 		public string State { get; set; }
 		public string Status { get; set; }
 
-		private bool _isSelected ;
-		public bool IsSelected
-		{
-			get { return _isSelected; }
-			set { SetProperty(ref _isSelected, value); }
-		}
+		
 	}
 
 	public class Port

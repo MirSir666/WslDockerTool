@@ -16,6 +16,11 @@ namespace WslDockerTool.Shared.Internal
 			this.dockerClient = dockerClient;
 		}
 
+		public Task<CreateContainerResponse> CreateContainerAsync(CreateContainerParameters parameters)
+		{
+			throw new NotImplementedException();
+		}
+
 		public Task<IList<ContainerListResponse>> ListContainersAsync(ContainersListParameters parameters = null)
 		{
 			if (parameters == null) parameters = new ContainersListParameters() { All=true };

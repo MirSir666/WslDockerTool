@@ -13,7 +13,6 @@ namespace WslDockerTool.Shared
 		Task StartContainerAsync(params string[] ids);
 		Task StopContainerAsync(params string[] ids);
 		Task RestartContainerAsync(params string[] ids);
-
 		Task<CreateContainerResponse> CreateContainerAsync(CreateContainerParameters parameters);
 	}
 }

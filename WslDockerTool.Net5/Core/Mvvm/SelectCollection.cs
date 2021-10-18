@@ -11,14 +11,5 @@ namespace WslDockerTool.Net5.Core.Mvvm
 		where T:class,DataGirdMultiple
 	{
 
-		private bool _isAllSelected = false;
-
-		public void CheckAll()
-		{
-			_isAllSelected = !_isAllSelected;
-			foreach (var item in Items)
-				item.IsSelected = _isAllSelected;
-			
-		}
 	}
 }

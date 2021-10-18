@@ -16,6 +16,7 @@
 		<Setter Property="HorizontalAlignment" Value="Left" />
 	</Style>-->
 	<converters:BytesToStringConverter x:Key="bytesToStringConverter" />
+	<converters:IsCheckedMultiValueConverter x:Key="isCheckedMultiValueConverter" />
 	<Style
 		x:Key="ButtonOk"
 		BasedOn="{StaticResource MessageBoxPrimaryButtonStyle}"
@@ -58,6 +59,8 @@
 		<Setter Property="FontSize" Value="12" />
 	</Style>-->
 
+	<!--<Style TargetType="DataGrid" BasedOn="{StaticResource DataGridBaseStyle}"/>
+	<Style BasedOn="{StaticResource }" TargetType="controls:AutoDataGrid" />-->
 	<Style BasedOn="{StaticResource ComboBoxBaseStyle}" TargetType="controls:SearchComboBox">
 		<Setter Property="Width" Value="280" />
 		<Setter Property="Height" Value="25" />

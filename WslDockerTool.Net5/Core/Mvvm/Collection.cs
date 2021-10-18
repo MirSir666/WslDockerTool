@@ -12,9 +12,9 @@ namespace WslDockerTool.Net5.Core.Mvvm
 		where T:class
 	{
 
-		readonly ObservableCollection<T> items = new ObservableCollection<T>();
+		 readonly ObservableCollection<T> items = new ObservableCollection<T>();
 
-		private bool _isAllSelected = false;
+
 
 		public ObservableCollection<T> Items
 		{
