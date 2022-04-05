@@ -53,7 +53,8 @@ namespace WslDockerTool.Net5.Controls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WslDockerTool.Net5;component/controls/searchcombobox/searchcombobox.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WslDockerTool.Net5;V1.0.0.0;component/controls/searchcombobox/searchcombobox.xam" +
+                    "l", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Controls\SearchComboBox\SearchComboBox.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -73,7 +73,7 @@ namespace WslDockerTool.Net5.Views.PortProxy {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WslDockerTool.Net5;component/views/portproxy/createportproxy.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WslDockerTool.Net5;V1.0.0.0;component/views/portproxy/createportproxy.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\PortProxy\CreatePortProxy.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

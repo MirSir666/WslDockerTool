@@ -72,7 +72,7 @@ namespace WslDockerTool.Net5.Controls.Dialogs {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WslDockerTool.Net5;component/controls/dialogs/dialogwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WslDockerTool.Net5;V1.0.0.0;component/controls/dialogs/dialogwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Controls\Dialogs\DialogWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

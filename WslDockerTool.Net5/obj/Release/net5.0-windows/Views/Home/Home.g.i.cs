@@ -60,7 +60,7 @@ namespace WslDockerTool.Net5.Views.Home {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WslDockerTool.Net5;component/views/home/home.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WslDockerTool.Net5;V1.0.0.0;component/views/home/home.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Home\Home.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
