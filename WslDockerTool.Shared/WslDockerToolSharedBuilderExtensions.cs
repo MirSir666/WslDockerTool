@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using WslDockerTool.Shared.Config;
+using WslDockerTool.Shared.Handlers;
 using WslDockerTool.Shared.Internal;
 
 namespace WslDockerTool.Shared
@@ -27,6 +28,8 @@ namespace WslDockerTool.Shared
 			container.Register<INetshHandler, NetshHandler>();
 			container.Register<INetworkHandler, NetworkHandler>();
 			container.Register<IVolumeHandler, VolumeHandler>();
+			container.Register<IDownloadHandler,DownloadHandler>();
+			container.Register<IPortProxyHandler, PortProxyHandler>();
 			//container.RegisterDelegate<DockerConfig>(DockerConfigFactoryDelegate.GetDockerConfigFactoryDelegate);
 			container.Register<IDockerClientFactory, DockerClientFactory>();
 			container.RegisterDelegate<DockerClient>(o=>o.Resolve<IDockerClientFactory>().RegisterDockerClient());

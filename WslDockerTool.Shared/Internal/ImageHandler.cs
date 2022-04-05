@@ -1,7 +1,9 @@
 ﻿using Docker.DotNet;
 using Docker.DotNet.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading;
@@ -12,11 +14,53 @@ namespace WslDockerTool.Shared.Internal
 	public class ImageHandler: IImageHandler
 	{
 		private readonly DockerClient dockerClient;
+        private readonly IDownloadHandler downloadHandler;
+        CancellationTokenSource cts ;
 
-		public ImageHandler(DockerClient dockerClient)
+		public ImageHandler(DockerClient dockerClient, IDownloadHandler downloadHandler)
 		{
 			this.dockerClient = dockerClient;
+            this.downloadHandler = downloadHandler;
+            cts = new CancellationTokenSource();
 		}
+
+		public async Task DeleteImageAsync(params string[] names)
+		{
+			foreach (var name in names)
+				await dockerClient.Images.DeleteImageAsync(name,new ImageDeleteParameters() { Force=true, NoPrune=true });
+		}
+
+		public async Task CreateImageAsync(string imageName)
+		{
+			await dockerClient.Images.CreateImageAsync(
+				new ImagesCreateParameters
+				{
+					FromImage = imageName,
+					Tag = "latest"
+				},
+				null,
+				new Progress<JSONMessage>((m) => { Console.WriteLine(JsonConvert.SerializeObject(m)); Debug.WriteLine(JsonConvert.SerializeObject(m)); }),
+				cts.Token);
+	
+		}
+
+		public Task SaveImageAsync(string imageName, string fileName)
+		{
+			return downloadHandler.SaveImageAsync( imageName, fileName);
+			//return dockerClient.Images.SaveImageAsync(name);
+		}
+
+		public Task LoadImageAsync(string filePath)
+		{
+
+			var prog = new Progress<JSONMessage>((m) =>
+			{
+				Console.WriteLine(JsonConvert.SerializeObject(m));
+				Debug.WriteLine(JsonConvert.SerializeObject(m));
+			});
+			return dockerClient.Images.LoadImageAsync(new ImageLoadParameters(), File.OpenRead(filePath), prog );
+		}
+
 
 		public Task<Stream> BuildImageFromDockerfileAsync(Stream contents, ImageBuildParameters parameters, CancellationToken cancellationToken = default)
 		{
@@ -28,10 +72,7 @@ namespace WslDockerTool.Shared.Internal
 			throw new NotImplementedException();
 		}
 
-		public Task CreateImageAsync(ImagesCreateParameters parameters, AuthConfig authConfig, IProgress<JSONMessage> progress, CancellationToken cancellationToken = default)
-		{
-			throw new NotImplementedException();
-		}
+		
 
 		public Task CreateImageAsync(ImagesCreateParameters parameters, AuthConfig authConfig, IDictionary<string, string> headers, IProgress<JSONMessage> progress, CancellationToken cancellationToken = default)
 		{
@@ -48,10 +89,7 @@ namespace WslDockerTool.Shared.Internal
 			throw new NotImplementedException();
 		}
 
-		public Task<IList<IDictionary<string, string>>> DeleteImageAsync(string name, ImageDeleteParameters parameters, CancellationToken cancellationToken = default)
-		{
-			throw new NotImplementedException();
-		}
+		
 
 		public Task<IList<ImageHistoryResponse>> GetImageHistoryAsync(string name, CancellationToken cancellationToken = default)
 		{
@@ -60,7 +98,7 @@ namespace WslDockerTool.Shared.Internal
 
 		public Task<ImageInspectResponse> InspectImageAsync(string name, CancellationToken cancellationToken = default)
 		{
-			throw new NotImplementedException();
+			return dockerClient.Images.InspectImageAsync(name, cancellationToken);
 		}
 
 		public Task<IList<ImagesListResponse>> ListImagesAsync(ImagesListParameters parame)
@@ -68,10 +106,7 @@ namespace WslDockerTool.Shared.Internal
 			return dockerClient.Images.ListImagesAsync(parame);
 		}
 
-		public Task LoadImageAsync(ImageLoadParameters parameters, Stream imageStream, IProgress<JSONMessage> progress, CancellationToken cancellationToken = default)
-		{
-			throw new NotImplementedException();
-		}
+		
 
 		public Task<ImagesPruneResponse> PruneImagesAsync(ImagesPruneParameters parameters = null, CancellationToken cancellationToken = default)
 		{
@@ -83,10 +118,7 @@ namespace WslDockerTool.Shared.Internal
 			throw new NotImplementedException();
 		}
 
-		public Task<Stream> SaveImageAsync(string name, CancellationToken cancellationToken = default)
-		{
-			throw new NotImplementedException();
-		}
+		
 
 		public Task<Stream> SaveImagesAsync(string[] names, CancellationToken cancellationToken = default)
 		{

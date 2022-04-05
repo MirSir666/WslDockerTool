@@ -16,8 +16,10 @@ namespace WslDockerTool.Shared.Internal
 		}
 		public DockerClient RegisterDockerClient()
 		{
+
 			var dockerClientConfiguration = new DockerClientConfiguration(dockerConfig.BaseUri, defaultTimeout: dockerConfig.DefaultTimeout);
 			var dockerClient = dockerClientConfiguration.CreateClient();
+
 			if (!string.IsNullOrEmpty(dockerConfig.Version))
 				dockerClient = dockerClientConfiguration.CreateClient(new Version(dockerConfig.Version));
 			return dockerClient;

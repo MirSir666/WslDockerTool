@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using HandyControl.Controls;
 using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using Prism.Services.Dialogs;
 using System;
@@ -8,6 +10,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WslDockerTool.Net5.Core;
+using WslDockerTool.Net5.Core.Common;
+using WslDockerTool.Net5.Core.Events;
 using WslDockerTool.Net5.Core.Mvvm;
 using WslDockerTool.Net5.Manage;
 using WslDockerTool.Net5.Models.Container;
@@ -18,30 +23,38 @@ namespace WslDockerTool.Net5.ViewModels.Container
 	public class ContainerListViewModel : Collection<ContainerListItemModel>
 	{
 		private readonly IContainerHandler containerHandler;
-		private readonly IMapper mapper;
+        private readonly IMapper mapper;
 		private readonly IDialogService dialogService;
 
-		public ContainerListViewModel(IContainerHandler containerHandler, IMapper mapper, IDialogService dialogService)
+		public ContainerListViewModel(IContainerHandler containerHandler,  IMapper mapper, IDialogService dialogService)
 		{
 			this.containerHandler = containerHandler;
-			this.mapper = mapper;
+            this.mapper = mapper;
 			this.dialogService = dialogService;
-			RestartCommand = new DelegateCommand<IEnumerable>(Restart);
+			MultipleRestartCommand = new DelegateCommand<IEnumerable>(Restart);
+			RestartCommand = new DelegateCommand<string>(Restart);
 			CreateCommand = new DelegateCommand(Create);
-			RemoveCommand = new DelegateCommand<IEnumerable>(Remove);
+			MultipleRemoveCommand = new DelegateCommand<IEnumerable>(Remove);
+			RemoveCommand = new DelegateCommand<string>(Remove);
 			QueryCommand = new DelegateCommand(Query);
-			StartCommand = new DelegateCommand<IEnumerable>(Start);
-			StopCommand = new DelegateCommand<IEnumerable>(Stop);
+			MultipleStartCommand = new DelegateCommand<IEnumerable>(Start);
+			MultipleStopCommand = new DelegateCommand<IEnumerable>(Stop);
+			ExportCommand = new DelegateCommand<string>(Export);
+			ContainerPortProxyCommand=new DelegateCommand<string>(ContainerPortProxy);
 			InitData();
 		}
 
-		public DelegateCommand<IEnumerable> RemoveCommand { get; set; }
-		public DelegateCommand QueryCommand { get; set; }
-		public DelegateCommand<IEnumerable> StartCommand { get; set; }
-		public DelegateCommand<IEnumerable> StopCommand { get; set; }
-		public DelegateCommand<IEnumerable> RestartCommand { get; set; }
+		public DelegateCommand<IEnumerable> MultipleRemoveCommand { get; set; }
 
+		public DelegateCommand<string> RemoveCommand { get; set; }
+		public DelegateCommand QueryCommand { get; set; }
+		public DelegateCommand<IEnumerable> MultipleStartCommand { get; set; }
+		public DelegateCommand<IEnumerable> MultipleStopCommand { get; set; }
+		public DelegateCommand<IEnumerable> MultipleRestartCommand { get; set; }
+		public DelegateCommand<string> RestartCommand { get; set; }
 		public DelegateCommand CreateCommand { get; set; }
+        public DelegateCommand<string> ExportCommand { get; set; }
+		public DelegateCommand<string> ContainerPortProxyCommand { get; set; }
 
 		public async void InitData()
 		{
@@ -53,28 +66,47 @@ namespace WslDockerTool.Net5.ViewModels.Container
 		{
 			InitData();
 		}
-		public async void Remove(IEnumerable Selectlist)
+		public async void Remove(IEnumerable selectlist)
 		{
-			var ids = GetSelectIds(Selectlist);
+			var ids = GetSelectIds(selectlist);
             if (ids.Any())
             {
                 await containerHandler.RemovesContainersAsync(ids);
                 Query();
             }
         }
-
-		public async void Start(IEnumerable Selectlist)
+		public  void ContainerPortProxy(string id)
 		{
-			var ids = GetSelectIds(Selectlist);
+			var parameter = new DialogParameters();
+			parameter.Add(DictKeySet.ContainerIdKey, id);
+			dialogService.ShowDialog(DictKeySet.ContainerPortProxyListDialog, parameter, o => { });
+			
+		}
+
+
+
+		public async void Remove(string id)
+		{
+			if (!string.IsNullOrEmpty(id))
+			{
+				await containerHandler.RemovesContainersAsync(id);
+				Query();
+			}
+		
+		}
+
+		public async void Start(IEnumerable selectlist)
+		{
+			var ids = GetSelectIds(selectlist);
 			if (ids.Any())
 			{
 				await containerHandler.StartContainerAsync(ids);
 				Query();
 			}
 		}
-		public async void Stop(IEnumerable Selectlist)
+		public async void Stop(IEnumerable selectlist)
 		{
-			var ids = GetSelectIds(Selectlist);
+			var ids = GetSelectIds(selectlist);
 			if (ids.Any())
 			{
 				await containerHandler.StopContainerAsync(ids);
@@ -84,21 +116,48 @@ namespace WslDockerTool.Net5.ViewModels.Container
 
 		public  void Create()
 		{
-			dialogService.ShowDialog("CreateContainer",o=> {
+			dialogService.ShowDialog(DictKeySet.CreateContainerDialog,  o=> {
 				if (o.Result == ButtonResult.OK)
-					Query();
+					 InitData();
 			});
 			
 		}
 
-		public async void Restart(IEnumerable Selectlist)
+
+
+		public async void Restart(IEnumerable selectlist)
 		{
-			var ids = GetSelectIds(Selectlist);
+			var ids = GetSelectIds(selectlist);
 			if (ids.Any())
 			{
 				await containerHandler.RestartContainerAsync(ids);
 				Query();
 			}
+		}
+		public async void Restart(string id)
+		{
+			if (!string.IsNullOrEmpty(id))
+			{
+				await containerHandler.RestartContainerAsync(id);
+				Query();
+			}
+		}
+
+		public async void Export(string id)
+		{
+			var name= Items.FirstOrDefault(o=>o.ID==id)?.NameF;
+			if (!string.IsNullOrEmpty(id))
+			{
+				var filename= Popup.SaveFile(name);
+				if (!string.IsNullOrEmpty(filename))
+				{
+					Growl.InfoGlobal($"正在操作中,请稍后");
+					await containerHandler.ExportContainerAsync(id, filename);
+					Growl.SuccessGlobal($"{filename}保存成功！");
+				}
+			}
+				
+			
 		}
 
 		string[] GetSelectIds(IEnumerable Selectlist)

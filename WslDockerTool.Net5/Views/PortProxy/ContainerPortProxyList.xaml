@@ -1,0 +1,181 @@
+﻿<UserControl
+    x:Class="WslDockerTool.Net5.Views.PortProxy.ContainerPortProxyList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:local="clr-namespace:WslDockerTool.Net5.Views.PortProxy"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d">
+    <Grid Style="{StaticResource GridPanel}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <StackPanel
+            Grid.Row="1"
+            Width="auto"
+            Margin="5,2"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackPanel
+                    Width="auto"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+
+                    <StackPanel
+                        Width="auto"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+
+
+                        <ComboBox
+                            Width="80"
+                            IsEditable="False"
+                            ItemsSource="{Binding ContainerPortList}"
+                            SelectedItem="{Binding SelectedContainerPort}">
+
+                            <ComboBox.ItemTemplate>
+                                <HierarchicalDataTemplate>
+                                    <TextBlock Text="{Binding Name}" />
+                                </HierarchicalDataTemplate>
+                            </ComboBox.ItemTemplate>
+                            <hc:Poptip.Instance>
+                                <hc:Poptip Content="容器端口" PlacementType="TopLeft" />
+                            </hc:Poptip.Instance>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <hc:ButtonGroup
+                        Width="200"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <Button
+                            Command="{Binding QueryCommand}"
+                            Content="刷新"
+                            Style="{DynamicResource ButtonDashedSuccess}" />
+                        <Button
+                            Command="{Binding CreateCommand}"
+                            Content="创建"
+                            Style="{DynamicResource ButtonDashedInfo}" />
+                        <Button
+                            Command="{Binding MultipleRemoveCommand}"
+                            CommandParameter="{Binding SelectedItems, ElementName=datagrid}"
+                            Content="移除"
+                            Style="{DynamicResource ButtonDashedInfo}" />
+                    </hc:ButtonGroup>
+                </StackPanel>
+                <DataGrid
+                    x:Name="datagrid"
+                    Grid.Row="1"
+                    Width="560"
+                    Height="280"
+                    AutoGenerateColumns="False"
+                    HeadersVisibility="All"
+                    ItemsSource="{Binding Items}"
+                    RowHeaderWidth="60">
+                    <DataGrid.RowHeaderTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=DataGridRow}}" />
+                        </DataTemplate>
+                    </DataGrid.RowHeaderTemplate>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn
+                            Width="2*"
+                            Binding="{Binding ListenAddress}"
+                            Header="监听地址"
+                            IsReadOnly="True" />
+                        <DataGridTextColumn
+                            Width="*"
+                            Binding="{Binding ListenPort}"
+                            Header="监听端口" />
+                        <DataGridTextColumn
+                            Width="2*"
+                            Binding="{Binding ConnectAddress}"
+                            Header="转发地址" />
+                        <DataGridTextColumn
+                            Width="*"
+                            Binding="{Binding ConnectPort}"
+                            Header="转发端口" />
+                        <DataGridTemplateColumn Header="操作" IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Orientation="Horizontal">
+                                        <hc:ButtonGroup>
+
+                                            <Button
+                                                Command="{Binding DataContext.RemoveCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
+                                                CommandParameter="{Binding .}"
+                                                Content="移除"
+                                                Style="{DynamicResource ButtonDashedInfo}" />
+                                        </hc:ButtonGroup>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </StackPanel>
+
+
+
+        <StackPanel
+            Grid.Row="3"
+            Width="auto"
+            Margin="5,2"
+            HorizontalAlignment="Left"
+            Orientation="Horizontal">
+            <TextBlock Style="{StaticResource FromLable}" Text="容器名称:">
+                <hc:Poptip.Instance>
+                    <hc:Poptip Content="容器名称:" PlacementType="Top" />
+                </hc:Poptip.Instance>
+            </TextBlock>
+            <TextBlock Style="{StaticResource FromLable}" Text="{Binding ContainerName}">
+                <hc:Poptip.Instance>
+                    <hc:Poptip Content="{Binding ContainerName}" PlacementType="Top" />
+                </hc:Poptip.Instance>
+            </TextBlock>
+
+        </StackPanel>
+
+
+        <StackPanel
+            Grid.Row="4"
+            Grid.Column="1"
+            HorizontalAlignment="Right"
+            Orientation="Horizontal">
+            <Button
+                Margin="10,0"
+                hc:BorderElement.CornerRadius="5"
+                Command="{Binding CloseCommand}"
+                CommandParameter="{x:Static prism:ButtonResult.OK}"
+                Content="确认"
+                IsDefault="True"
+                Style="{StaticResource ButtonOk}" />
+            <Button
+                Margin="10,0"
+                hc:BorderElement.CornerRadius="5"
+                Command="{Binding CloseCommand}"
+                CommandParameter="{x:Static prism:ButtonResult.Cancel}"
+                Content="取消"
+                IsCancel="True"
+                Style="{StaticResource ButtonCancel}" />
+        </StackPanel>
+    </Grid>
+</UserControl>

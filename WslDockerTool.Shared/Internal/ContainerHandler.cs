@@ -2,7 +2,10 @@
 using Docker.DotNet.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace WslDockerTool.Shared.Internal
@@ -10,18 +13,31 @@ namespace WslDockerTool.Shared.Internal
 	public class ContainerHandler: IContainerHandler
 	{
 		private readonly DockerClient dockerClient;
+        private readonly IDownloadHandler downloadHandler;
 
-		public ContainerHandler(DockerClient dockerClient)
+        public ContainerHandler(DockerClient dockerClient, IDownloadHandler downloadHandler)
 		{
 			this.dockerClient = dockerClient;
-		}
+            this.downloadHandler = downloadHandler;
+        }
 
-		public Task<CreateContainerResponse> CreateContainerAsync(CreateContainerParameters parameters)
+		public  async Task CreateContainerAsync(CreateContainerParameters parameters)
 		{
-			throw new NotImplementedException();
+			// var waitContainerCts = new CancellationTokenSource(delay: TimeSpan.FromMinutes(0.5));
+		     await dockerClient.Containers.CreateContainerAsync(parameters);
 		}
 
-		public Task<IList<ContainerListResponse>> ListContainersAsync(ContainersListParameters parameters = null)
+        public Task ExportContainerAsync(string id, string fileName)
+        {
+			return downloadHandler.ExportContainerAsync(id, fileName);
+		}
+
+        public Task<ContainerInspectResponse> InspectContainerAsync(string id)
+        {
+            return dockerClient.Containers.InspectContainerAsync(id);	
+        }
+
+        public Task<IList<ContainerListResponse>> ListContainersAsync(ContainersListParameters parameters = null)
 		{
 			if (parameters == null) parameters = new ContainersListParameters() { All=true };
 			return dockerClient.Containers.ListContainersAsync(parameters);

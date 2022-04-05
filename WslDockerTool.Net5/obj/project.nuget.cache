@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "YapwnxrZQoQ9jzvn4FDbpEAE09txHzTNZLao0gJm/bhwPweNFJf4Jp1Z0NCmwW1eV8/b+0bpPJ7GgBOp0ynxgA==",
+  "dgSpecHash": "cA06vkDOqzaOQMDA/vaxA1DQ13vQLyeBIBuXnQs0W8wGxhTKKvmujrc6nrSDMk4kWWfKDQVzaThrbESpVlv/Xg==",
   "success": true,
-  "projectFilePath": "D:\\project\\Example\\WslDockerTool\\WslDockerTool.Net5\\WslDockerTool.Net5.csproj",
+  "projectFilePath": "D:\\20220210\\WslDockerTool\\WslDockerTool.Net5\\WslDockerTool.Net5.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mirsir\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
-    "C:\\Users\\mirsir\\.nuget\\packages\\docker.dotnet\\3.125.4\\docker.dotnet.3.125.4.nupkg.sha512",
+    "C:\\Users\\mirsir\\.nuget\\packages\\docker.dotnet\\3.125.5\\docker.dotnet.3.125.5.nupkg.sha512",
     "C:\\Users\\mirsir\\.nuget\\packages\\dryioc.dll\\4.7.7\\dryioc.dll.4.7.7.nupkg.sha512",
     "C:\\Users\\mirsir\\.nuget\\packages\\handycontrol\\3.2.0\\handycontrol.3.2.0.nupkg.sha512",
     "C:\\Users\\mirsir\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -28,7 +28,8 @@
     "C:\\Users\\mirsir\\.nuget\\packages\\system.reflection.primitives\\4.3.0\\system.reflection.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\mirsir\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\mirsir\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
-    "C:\\Users\\mirsir\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512"
+    "C:\\Users\\mirsir\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
+    "C:\\Users\\mirsir\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
   "logs": []
 }

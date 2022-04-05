@@ -1,0 +1,144 @@
+﻿<UserControl
+    x:Class="WslDockerTool.Net5.Views.PortProxy.CreatePortProxy"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:WslDockerTool.Net5.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:local="clr-namespace:WslDockerTool.Net5.Views.PortProxy"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d">
+    <Grid Style="{StaticResource GridPanel}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Grid.Row="1"
+            Width="auto"
+            Margin="5,2"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
+            <StackPanel>
+                <TextBlock Style="{StaticResource FromLable}" Text="监听IP地址:">
+                    <hc:Poptip.Instance>
+                        <hc:Poptip Content="监听IP地址" PlacementType="TopLeft" />
+                    </hc:Poptip.Instance>
+                </TextBlock>
+                <TextBox IsReadOnly="{Binding IsUpdate}" Text="{Binding ListenAddress}">
+                    <hc:Poptip.Instance>
+                        <hc:Poptip Content="请输入监听IP地址" PlacementType="TopLeft" />
+                    </hc:Poptip.Instance>
+                </TextBox>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock
+                    Width="100"
+                    Style="{StaticResource FromLable}"
+                    Text="监听端口:">
+                    <hc:Poptip.Instance>
+                        <hc:Poptip Content="监听端口" PlacementType="TopLeft" />
+                    </hc:Poptip.Instance>
+                </TextBlock>
+                <TextBox
+                    Width="100"
+                    IsReadOnly="{Binding IsUpdate}"
+                    Text="{Binding ListenPort}">
+                    <hc:Poptip.Instance>
+                        <hc:Poptip Content="请输入监听端口" PlacementType="TopLeft" />
+                    </hc:Poptip.Instance>
+                </TextBox>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel
+            Grid.Row="2"
+            Width="auto"
+            Margin="5,2"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
+            <StackPanel>
+                <TextBlock Style="{StaticResource FromLable}" Text="转发IP地址:">
+                    <hc:Poptip.Instance>
+                        <hc:Poptip Content="转发IP地址" PlacementType="TopLeft" />
+                    </hc:Poptip.Instance>
+                </TextBlock>
+                <TextBox Text="{Binding ConnectAddress}">
+                    <hc:Poptip.Instance>
+                        <hc:Poptip Content="请输入转发IP地址" PlacementType="TopLeft" />
+                    </hc:Poptip.Instance>
+                </TextBox>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock
+                    Width="100"
+                    Style="{StaticResource FromLable}"
+                    Text="转发端口:">
+                    <hc:Poptip.Instance>
+                        <hc:Poptip Content="转发端口" PlacementType="TopLeft" />
+                    </hc:Poptip.Instance>
+                </TextBlock>
+                <TextBox
+                    Width="100"
+                    IsReadOnly="{Binding IsPort}"
+                    Text="{Binding ConnectPort}">
+                    <hc:Poptip.Instance>
+                        <hc:Poptip Content="请输入转发端口" PlacementType="TopLeft" />
+                    </hc:Poptip.Instance>
+                </TextBox>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel
+            Grid.Row="3"
+            Width="auto"
+            Margin="5,2"
+            HorizontalAlignment="Center"
+            Orientation="Vertical">
+            <TextBlock Style="{StaticResource FromLable}" Text="WSL IP:">
+                <hc:Poptip.Instance>
+                    <hc:Poptip Content="WSL IP:" PlacementType="TopLeft" />
+                </hc:Poptip.Instance>
+            </TextBlock>
+            <TextBox
+                Width="380"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                IsReadOnly="True"
+                Text="{Binding Tips}" />
+
+        </StackPanel>
+
+
+
+
+        <StackPanel
+            Grid.Row="4"
+            Grid.Column="1"
+            HorizontalAlignment="Right"
+            Orientation="Horizontal">
+            <Button
+                Margin="10,0"
+                hc:BorderElement.CornerRadius="5"
+                Command="{Binding CloseCommand}"
+                CommandParameter="{x:Static prism:ButtonResult.OK}"
+                Content="确认"
+                IsDefault="True"
+                Style="{StaticResource ButtonOk}" />
+            <Button
+                Margin="10,0"
+                hc:BorderElement.CornerRadius="5"
+                Command="{Binding CloseCommand}"
+                CommandParameter="{x:Static prism:ButtonResult.Cancel}"
+                Content="取消"
+                IsCancel="True"
+                Style="{StaticResource ButtonCancel}" />
+        </StackPanel>
+    </Grid>
+</UserControl>

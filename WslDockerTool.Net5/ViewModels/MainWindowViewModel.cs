@@ -13,33 +13,37 @@ namespace WslDockerTool.Net5.ViewModels
 {
 	public class MainWindowViewModel: BindableBase
 	{
-		private readonly IImageHandler imageHandler;
 		private readonly IRegionManager regionManager;
 
 
-		public MainWindowViewModel(IImageHandler imageHandler,IRegionManager regionManager)
+		public MainWindowViewModel(IRegionManager regionManager)
 		{
-			this.imageHandler = imageHandler;
 			this.regionManager = regionManager;
-
 			this.NavigateCommand = new DelegateCommand<string>(Navigate);
-			NavigateList.Add(new NavigationTreeItem("首页", null, "\ue64a"));
+			this.LoadedCommand = new DelegateCommand(Loaded);
+			//NavigateList.Add(new NavigationTreeItem("首页", null, "\ue64a"));
 			NavigateList.Add(new NavigationTreeItem("容器管理", "ContainerList", "\ue64a"));
 			NavigateList.Add(new NavigationTreeItem("镜像管理", "ImageList", "\ue617"));
 			NavigateList.Add(new NavigationTreeItem("网络管理", "NetworkList", "\ue64d"));
 			NavigateList.Add(new NavigationTreeItem("数据卷管理", "VolumeList", "\ue6bc"));
-			NavigateList.Add(new NavigationTreeItem("本地端口管理", "PortProxyList", "\ue650"));
+			NavigateList.Add(new NavigationTreeItem("端口映射管理", "PortProxyList", "\ue650"));
 		}
 		public List<NavigationTreeItem> NavigateList { get; set; } = new List<NavigationTreeItem>();
 
 		public DelegateCommand<string> NavigateCommand { get; set; }
+        public DelegateCommand LoadedCommand { get; set; }
 
-		private void Navigate(string uri)
+        private void Navigate(string uri)
 		{
 			if (uri != null)
 			{
 				regionManager.RequestNavigate("ContentRegion", uri);
 			}
+		}
+
+		public void Loaded()
+		{
+			Navigate("ContainerList");
 		}
 	}
 }

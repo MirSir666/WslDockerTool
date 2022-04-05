@@ -1,36 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "D:\\project\\Example\\WslDockerTool\\WslDockerTool.Shared\\WslDockerTool.Shared.csproj": {}
+    "D:\\20220210\\WslDockerTool\\WslDockerTool.Shared\\WslDockerTool.Shared.csproj": {}
   },
   "projects": {
-    "D:\\project\\Example\\WslDockerTool\\WslDockerTool.Shared\\WslDockerTool.Shared.csproj": {
+    "D:\\20220210\\WslDockerTool\\WslDockerTool.Shared\\WslDockerTool.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\project\\Example\\WslDockerTool\\WslDockerTool.Shared\\WslDockerTool.Shared.csproj",
+        "projectUniqueName": "D:\\20220210\\WslDockerTool\\WslDockerTool.Shared\\WslDockerTool.Shared.csproj",
         "projectName": "WslDockerTool.Shared",
-        "projectPath": "D:\\project\\Example\\WslDockerTool\\WslDockerTool.Shared\\WslDockerTool.Shared.csproj",
+        "projectPath": "D:\\20220210\\WslDockerTool\\WslDockerTool.Shared\\WslDockerTool.Shared.csproj",
         "packagesPath": "C:\\Users\\mirsir\\.nuget\\packages\\",
-        "outputPath": "D:\\project\\Example\\WslDockerTool\\WslDockerTool.Shared\\obj\\",
+        "outputPath": "D:\\20220210\\WslDockerTool\\WslDockerTool.Shared\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "d:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\mirsir\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.cdn.azure.cn/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
@@ -50,7 +42,7 @@
           "dependencies": {
             "Docker.DotNet": {
               "target": "Package",
-              "version": "[3.125.4, )"
+              "version": "[3.125.5, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -73,7 +65,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

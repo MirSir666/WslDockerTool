@@ -19,6 +19,9 @@
     <Compile Update="Views\Home\Home.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Image\CreateImage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Image\ImageList.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -26,6 +29,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Network\NetworkList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PortProxy\ContainerPortProxyList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PortProxy\CreatePortProxy.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\PortProxy\PortProxyList.xaml.cs">
@@ -60,6 +69,9 @@
     <Page Update="Views\Home\Home.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\Image\CreateImage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\Image\ImageList.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -67,6 +79,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Network\NetworkList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PortProxy\ContainerPortProxyList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PortProxy\CreatePortProxy.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\PortProxy\PortProxyList.xaml">

@@ -1,0 +1,152 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\20220210\\WslDockerTool\\WslDockerTool.Net5\\WslDockerTool.Net5.csproj": {}
+  },
+  "projects": {
+    "D:\\20220210\\WslDockerTool\\WslDockerTool.Net5\\WslDockerTool.Net5.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\20220210\\WslDockerTool\\WslDockerTool.Net5\\WslDockerTool.Net5.csproj",
+        "projectName": "WslDockerTool.Net5",
+        "projectPath": "D:\\20220210\\WslDockerTool\\WslDockerTool.Net5\\WslDockerTool.Net5.csproj",
+        "packagesPath": "C:\\Users\\mirsir\\.nuget\\packages\\",
+        "outputPath": "D:\\20220210\\WslDockerTool\\WslDockerTool.Net5\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mirsir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
+            "projectReferences": {
+              "D:\\20220210\\WslDockerTool\\WslDockerTool.Shared\\WslDockerTool.Shared.csproj": {
+                "projectPath": "D:\\20220210\\WslDockerTool\\WslDockerTool.Shared\\WslDockerTool.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "HandyControl": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Prism.DryIoc": {
+              "target": "Package",
+              "version": "[8.1.97, )"
+            },
+            "Prism.Wpf": {
+              "target": "Package",
+              "version": "[8.1.97, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\20220210\\WslDockerTool\\WslDockerTool.Shared\\WslDockerTool.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\20220210\\WslDockerTool\\WslDockerTool.Shared\\WslDockerTool.Shared.csproj",
+        "projectName": "WslDockerTool.Shared",
+        "projectPath": "D:\\20220210\\WslDockerTool\\WslDockerTool.Shared\\WslDockerTool.Shared.csproj",
+        "packagesPath": "C:\\Users\\mirsir\\.nuget\\packages\\",
+        "outputPath": "D:\\20220210\\WslDockerTool\\WslDockerTool.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mirsir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Docker.DotNet": {
+              "target": "Package",
+              "version": "[3.125.4, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Prism.DryIoc.Extensions": {
+              "target": "Package",
+              "version": "[8.0.62, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

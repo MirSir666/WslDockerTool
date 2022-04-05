@@ -1,6 +1,7 @@
 ﻿using Docker.DotNet.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,6 +14,8 @@ namespace WslDockerTool.Shared
 		Task StartContainerAsync(params string[] ids);
 		Task StopContainerAsync(params string[] ids);
 		Task RestartContainerAsync(params string[] ids);
-		Task<CreateContainerResponse> CreateContainerAsync(CreateContainerParameters parameters);
+		Task CreateContainerAsync(CreateContainerParameters parameters);
+		Task ExportContainerAsync(string id, string fileName);
+		Task<ContainerInspectResponse> InspectContainerAsync(string id);
 	}
 }

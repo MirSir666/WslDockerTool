@@ -13,12 +13,13 @@
     d:DesignWidth="800"
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
+            <RowDefinition Height="35" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <!--<hc:SplitButton Content="Primary">
 				<hc:SplitButton.DropDownContent>
 					<StackPanel>
@@ -47,31 +48,31 @@
 					</hc:ContextMenuToggleButton.Menu>
 				</hc:ContextMenuToggleButton>-->
                 <Button
-                    Command="{Binding StartCommand}"
+                    Command="{Binding MultipleStartCommand}"
                     CommandParameter="{Binding SelectedItems, ElementName=datagrid}"
                     Content="启动"
                     Style="{DynamicResource ButtonDashedSuccess}" />
 
                 <Button
-                    Command="{Binding StopCommand}"
+                    Command="{Binding MultipleStopCommand}"
                     CommandParameter="{Binding SelectedItems, ElementName=datagrid}"
                     Content="停止"
                     Style="{DynamicResource ButtonDashedInfo}" />
                 <Button
-                    Command="{Binding RestartCommand}"
+                    Command="{Binding MultipleRestartCommand}"
                     CommandParameter="{Binding SelectedItems, ElementName=datagrid}"
                     Content="重启"
                     Style="{DynamicResource ButtonDashedSuccess}" />
                 <Button
-                    Command="{Binding QueryCommand}"
-                    Content="查询"
+                    Command="{Binding CreateCommand}"
+                    Content="创建"
                     Style="{DynamicResource ButtonDashedSuccess}" />
                 <Button
-                    Command="{Binding CreateCommand}"
-                    Content="添加"
-                    Style="{DynamicResource ButtonDashedInfo}" />
+                    Command="{Binding QueryCommand}"
+                    Content="刷新"
+                    Style="{DynamicResource ButtonDashedSuccess}" />
                 <Button
-                    Command="{Binding RemoveCommand}"
+                    Command="{Binding MultipleRemoveCommand}"
                     CommandParameter="{Binding SelectedItems, ElementName=datagrid}"
                     Content="移除"
                     Style="{DynamicResource ButtonDashedInfo}" />
@@ -106,27 +107,65 @@
                 <DataGridTextColumn
                     Width="*"
                     Binding="{Binding NameF}"
-                    Header="名称" />
+                    Header="名称"
+                    IsReadOnly="True" />
                 <DataGridTextColumn
                     Width="*"
                     Binding="{Binding Image}"
-                    Header="镜像名称" />
+                    Header="镜像名称"
+                    IsReadOnly="True" />
 
                 <DataGridTextColumn
                     Width="*"
                     Binding="{Binding PortF}"
-                    Header="端口" />
+                    Header="端口"
+                    IsReadOnly="True" />
                 <DataGridTextColumn
                     Width="*"
                     MinWidth="130"
                     Binding="{Binding Status}"
-                    Header="状态" />
+                    Header="状态"
+                    IsReadOnly="True" />
 
                 <DataGridTextColumn
                     Width="120"
                     MinWidth="120"
                     Binding="{Binding Created, StringFormat={}{0:yyyy-MM-dd}}"
-                    Header="创建时间" />
+                    Header="创建时间"
+                    IsReadOnly="True" />
+
+                <DataGridTemplateColumn Header="操作" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal">
+                                <hc:ButtonGroup>
+                                    <Button
+                                        Command="{Binding DataContext.ContainerPortProxyCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
+                                        CommandParameter="{Binding ID}"
+                                        Content="映射" />
+                                    <Button
+                                        Command="{Binding DataContext.RestartCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
+                                        CommandParameter="{Binding ID}"
+                                        Content="重启"
+                                        Style="{DynamicResource ButtonDashedSuccess}" />
+                                    <Button
+                                        Command="{Binding DataContext.RemoveCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
+                                        CommandParameter="{Binding ID}"
+                                        Content="移除"
+                                        Style="{DynamicResource ButtonDashedInfo}" />
+
+                                    <Button
+                                        Command="{Binding DataContext.ExportCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
+                                        CommandParameter="{Binding ID}"
+                                        Content="导出" />
+                                </hc:ButtonGroup>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
 
         </DataGrid>

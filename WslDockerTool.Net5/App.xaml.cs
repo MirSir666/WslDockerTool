@@ -9,8 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using WslDockerTool.Net5.Controls.Dialogs;
+using WslDockerTool.Net5.Core;
 using WslDockerTool.Net5.Core.Mapping;
+using WslDockerTool.Net5.ViewModels;
 using WslDockerTool.Net5.ViewModels.Container;
+using WslDockerTool.Net5.ViewModels.PortProxy;
 using WslDockerTool.Net5.Views;
 using WslDockerTool.Net5.Views.Container;
 using WslDockerTool.Net5.Views.Image;
@@ -29,6 +32,7 @@ namespace WslDockerTool.Net5
 	{
 		protected override Window CreateShell()
 		{
+
 			
 			return Container.Resolve<MainWindow>();
 		}
@@ -36,8 +40,9 @@ namespace WslDockerTool.Net5
 		
 		protected override IContainerExtension CreateContainerExtension()
 		{
+			var url = ConfigurationManager.AppSettings.Get("DockerBaseUri");
 			var container = new Container(CreateContainerRules());
-			container.RegisterDelegate<DockerConfig>(o => new DockerConfig() { BaseUri = new Uri("http://localhost:3000/") });
+			container.RegisterDelegate<DockerConfig>(o => new DockerConfig() { BaseUri = new Uri(url), DefaultTimeout=TimeSpan.FromMinutes(1) });
 			container.RegisterWslDockerToolShared();
 			container.RegisterAutoMapper();
 			return new DryIocContainerExtension(container);
@@ -53,9 +58,10 @@ namespace WslDockerTool.Net5
 			containerRegistry.RegisterForNavigation<NetworkList>("NetworkList");
 			containerRegistry.RegisterForNavigation<PortProxyList>("PortProxyList");
 
-
-			containerRegistry.RegisterDialog<CreateContainer, CreateContainerViewModel>("CreateContainer");
-			//PortProxyList
+			containerRegistry.RegisterDialog<CreatePortProxy, CreatePortProxyViewModel>(DictKeySet.CreatePortProxyDialog);
+			containerRegistry.RegisterDialog<CreateContainer, CreateContainerViewModel>(DictKeySet.CreateContainerDialog);
+			containerRegistry.RegisterDialog<CreateImage, CreateImageViewModel>(DictKeySet.CreateImageDialog);
+			containerRegistry.RegisterDialog<ContainerPortProxyList, ContainerPortProxyListViewModel>(DictKeySet.ContainerPortProxyListDialog);
 		}
 	}
 }
