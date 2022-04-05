@@ -28,7 +28,7 @@ WslDockerTool 是一个简单的 Docker UI 操作面板,使用它可以很方便
 sudo nano /etc/docker/daemon.json
 ```
 ```Json
-{"hosts": ["unix:///var/run/docker.sock"， "0.0.0.0:3000"]}
+{"hosts": ["unix:///var/run/docker.sock", "0.0.0.0:3000"]}
 ```
 ###  打开..\WslDockerTool\WslDockerTool.Net5.dll.config 文件 修改地址
  ![WslDockerTool.Net5.dll.config](images/WslDockerTool.Net5.dll.config.png)
