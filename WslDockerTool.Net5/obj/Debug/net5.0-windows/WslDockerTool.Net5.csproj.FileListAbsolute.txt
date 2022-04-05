@@ -88,15 +88,6 @@ D:\20220210\WslDockerTool\WslDockerTool.Net5\bin\Debug\net5.0-windows\Prism.dll
 D:\20220210\WslDockerTool\WslDockerTool.Net5\bin\Debug\net5.0-windows\Prism.DryIoc.Wpf.dll
 D:\20220210\WslDockerTool\WslDockerTool.Net5\bin\Debug\net5.0-windows\Prism.DryIoc.Extensions.dll
 D:\20220210\WslDockerTool\WslDockerTool.Net5\bin\Debug\net5.0-windows\Prism.Wpf.dll
-D:\20220210\WslDockerTool\WslDockerTool.Net5\bin\Debug\net5.0-windows\ca-ES\HandyControl.resources.dll
-D:\20220210\WslDockerTool\WslDockerTool.Net5\bin\Debug\net5.0-windows\en\HandyControl.resources.dll
-D:\20220210\WslDockerTool\WslDockerTool.Net5\bin\Debug\net5.0-windows\fa\HandyControl.resources.dll
-D:\20220210\WslDockerTool\WslDockerTool.Net5\bin\Debug\net5.0-windows\fr\HandyControl.resources.dll
-D:\20220210\WslDockerTool\WslDockerTool.Net5\bin\Debug\net5.0-windows\ko-KR\HandyControl.resources.dll
-D:\20220210\WslDockerTool\WslDockerTool.Net5\bin\Debug\net5.0-windows\pl\HandyControl.resources.dll
-D:\20220210\WslDockerTool\WslDockerTool.Net5\bin\Debug\net5.0-windows\pt-BR\HandyControl.resources.dll
-D:\20220210\WslDockerTool\WslDockerTool.Net5\bin\Debug\net5.0-windows\ru\HandyControl.resources.dll
-D:\20220210\WslDockerTool\WslDockerTool.Net5\bin\Debug\net5.0-windows\tr\HandyControl.resources.dll
 D:\20220210\WslDockerTool\WslDockerTool.Net5\bin\Debug\net5.0-windows\WslDockerTool.Shared.dll
 D:\20220210\WslDockerTool\WslDockerTool.Net5\bin\Debug\net5.0-windows\WslDockerTool.Shared.pdb
 D:\20220210\WslDockerTool\WslDockerTool.Net5\obj\Debug\net5.0-windows\WslDockerTool.Net5.csproj.AssemblyReference.cache

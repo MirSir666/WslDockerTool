@@ -38,12 +38,14 @@ namespace WslDockerTool.Net5.ViewModels.PortProxy
             RemoveCommand = new DelegateCommand<PortProxyListItemModel>(Remove);
             QueryCommand = new DelegateCommand(Query);
             ModifyCommand = new DelegateCommand<PortProxyListItemModel>(Modify);
+            CloseCommand = new DelegateCommand<ButtonResult?>(CloseAction);
 
             //  InitData();
         }
         public string Title { get; set; } = "容器端口映射";
         public DelegateCommand CreateCommand { get; set; }
         public DelegateCommand QueryCommand { get; set; }
+        public DelegateCommand<ButtonResult?> CloseCommand { get; set; }
         public DelegateCommand<IEnumerable> MultipleRemoveCommand { get; set; }
 
         public DelegateCommand<PortProxyListItemModel> RemoveCommand { get; set; }
@@ -151,6 +153,13 @@ namespace WslDockerTool.Net5.ViewModels.PortProxy
             return true;
         }
 
+
+        private void CloseAction(ButtonResult? parameter)
+        {
+            ButtonResult button = parameter ?? ButtonResult.None;
+
+            RequestClose?.Invoke(new DialogResult(button, new DialogParameters()));
+        }
         public void OnDialogClosed()
         {
 

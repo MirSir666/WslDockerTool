@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "cA06vkDOqzaOQMDA/vaxA1DQ13vQLyeBIBuXnQs0W8wGxhTKKvmujrc6nrSDMk4kWWfKDQVzaThrbESpVlv/Xg==",
+  "dgSpecHash": "fsSyGsiRKuzurT0lbdzUxuLXFXwqUX7TjNOG7PF2iC15+zUsnGxJTL9dCrXLtLLS95Uac7yzblumNmzD19Lz1A==",
   "success": true,
   "projectFilePath": "D:\\20220210\\WslDockerTool\\WslDockerTool.Net5\\WslDockerTool.Net5.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mirsir\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\mirsir\\.nuget\\packages\\docker.dotnet\\3.125.5\\docker.dotnet.3.125.5.nupkg.sha512",
     "C:\\Users\\mirsir\\.nuget\\packages\\dryioc.dll\\4.7.7\\dryioc.dll.4.7.7.nupkg.sha512",
-    "C:\\Users\\mirsir\\.nuget\\packages\\handycontrol\\3.2.0\\handycontrol.3.2.0.nupkg.sha512",
+    "C:\\Users\\mirsir\\.nuget\\packages\\handycontrol\\3.3.0\\handycontrol.3.3.0.nupkg.sha512",
     "C:\\Users\\mirsir\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\mirsir\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\mirsir\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

@@ -59,7 +59,7 @@ namespace WslDockerTool.Net5.ViewModels.PortProxy
         }
 
 
-
+       
         public override void OnDialogOpened(IDialogParameters parameters)
         {
 

@@ -14,6 +14,6 @@
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_Xaml_Behaviors_Wpf Condition=" '$(PkgMicrosoft_Xaml_Behaviors_Wpf)' == '' ">C:\Users\mirsir\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.31</PkgMicrosoft_Xaml_Behaviors_Wpf>
-    <PkgHandyControl Condition=" '$(PkgHandyControl)' == '' ">C:\Users\mirsir\.nuget\packages\handycontrol\3.2.0</PkgHandyControl>
+    <PkgHandyControl Condition=" '$(PkgHandyControl)' == '' ">C:\Users\mirsir\.nuget\packages\handycontrol\3.3.0</PkgHandyControl>
   </PropertyGroup>
 </Project>

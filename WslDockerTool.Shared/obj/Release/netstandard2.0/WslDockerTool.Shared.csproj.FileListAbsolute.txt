@@ -1,0 +1,10 @@
+D:\20220210\WslDockerTool\WslDockerTool.Shared\bin\Release\netstandard2.0\WslDockerTool.Shared.deps.json
+D:\20220210\WslDockerTool\WslDockerTool.Shared\bin\Release\netstandard2.0\WslDockerTool.Shared.dll
+D:\20220210\WslDockerTool\WslDockerTool.Shared\bin\Release\netstandard2.0\WslDockerTool.Shared.pdb
+D:\20220210\WslDockerTool\WslDockerTool.Shared\obj\Release\netstandard2.0\WslDockerTool.Shared.csproj.AssemblyReference.cache
+D:\20220210\WslDockerTool\WslDockerTool.Shared\obj\Release\netstandard2.0\WslDockerTool.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\20220210\WslDockerTool\WslDockerTool.Shared\obj\Release\netstandard2.0\WslDockerTool.Shared.AssemblyInfoInputs.cache
+D:\20220210\WslDockerTool\WslDockerTool.Shared\obj\Release\netstandard2.0\WslDockerTool.Shared.AssemblyInfo.cs
+D:\20220210\WslDockerTool\WslDockerTool.Shared\obj\Release\netstandard2.0\WslDockerTool.Shared.csproj.CoreCompileInputs.cache
+D:\20220210\WslDockerTool\WslDockerTool.Shared\obj\Release\netstandard2.0\WslDockerTool.Shared.dll
+D:\20220210\WslDockerTool\WslDockerTool.Shared\obj\Release\netstandard2.0\WslDockerTool.Shared.pdb
